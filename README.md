@@ -14,18 +14,18 @@ you can use for pretty much whatever.
 
 (* = not included)
 
-AJ
+AJ  
 aj@lkn.io | @ajlkn
 
 
 ## Credits:
 
-###	Demo Images:
-		Unsplash (unsplash.com)
+### Demo Images:
+Unsplash (unsplash.com)
 
-###	Icons:
-		Font Awesome (fontawesome.io)
+### Icons:
+Font Awesome (fontawesome.io)
 
-###	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+### Other:
+jQuery (jquery.com)
+Responsive Tools (github.com/ajlkn/responsive-tools)
