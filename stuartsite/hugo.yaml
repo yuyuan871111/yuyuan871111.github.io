@@ -127,7 +127,7 @@ params:
     title: "Yu-Yuan (Stuart) Yang."
     subtitle: "This is my personal web"
     content: "I'm a cross-disciplinary learner. My research interests span over the fields of biochemical engineering, bioinformatics, molecular modeling and computational biology."
-    image: images/me.jpg
+    image: /images/me.jpg
     bottomImage:
       enable: true
     # roundImage: true # Make hero image circular | default false
@@ -155,6 +155,7 @@ params:
   about:
     enable: true
     title: "About Me"
+    # image: /images/me.jpg
     content: |-
       I am currently working on a project that involves the application of supervised machine learning methods to the selection of representative protein conformations from ensembles generated from molecular simulation.
     skills:
@@ -289,7 +290,7 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - title: To be updated
+      - title: content
         content: "To be updated"
         image: /images/tbu.jpg
       # - title: Google kickstart runner
