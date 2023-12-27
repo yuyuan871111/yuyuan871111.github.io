@@ -183,27 +183,23 @@ params:
         content: |
           I am a PhD student as a software developer at London, UK. I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory.
 
-      - job: "Master research student"
+      - job: "Research student/Teaching assistant"
         company: "National Taiwan University"
         companyUrl: "https://www.bebi.ntu.edu.tw/"
         date: "Sep 2021 - Apr 2023"
         content: |
-          I was a master research student at Taipei, Taiwan.
+          I was a master research student and teaching assistant at Taipei, Taiwan.
+          - Master research topics: 
+            - Structural Biologiy: Molecular dynamics simulation of the SARS-CoV-2 spike protein
+            - Health informatics: FastEval Parkinsonism -- A web-based tool for the diagnosis of Parkinson's disease
+            - Cheminformatics
+            - Quantum computing
+          - Teaching assistant: Calculus (Sep 2021 - Jun 2022)
 
-      # - job: "Junior Software Developer"
-      #   company: "Apple"
-      #   companyUrl: "https://example.com"
-      #   date: "Jan 2020 - Aug 2020"
-      #   info:
-      #     enable: false
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
-      #   content: |
-      #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-      #     - Lead backend developer for a product.
-      #     - Created a frontend design for a product.
+      - job: "Previous job"
+        company: "More info on Linkedin"
+        date: "past time"
+        companyUrl: "https://www.linkedin.com/in/yuyuan871111/"
 
       # - job: "UI/UX Designer"
       #   company: "Netflix"
@@ -214,15 +210,8 @@ params:
       #     url: "https://example.com"
       #   content: |
       #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
       #     - Lead backend developer for a product.
       #     - Created a frontend design for a product.
-
-      # - job: "Product Designer"
-      #   company: "Google"
-      #   companyUrl: "https://example.com"
-      #   date: "Feb 2016 - Mar 2017"
-      #   content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
 
   # Education
   education:
