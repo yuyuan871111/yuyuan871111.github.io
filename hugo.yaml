@@ -56,7 +56,7 @@ params:
   title: "Stuart's Profile"
   description: Text about my cool site
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/fav.png"
+  favicon: "/icons/fav.png"
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -135,7 +135,7 @@ params:
       enable: true
       name: "Resume/CV"
       url: "files/CV_stuart_v11.pdf"
-      download: true
+      download: false
       newPage: false
     socialLinks:
       fontAwesomeIcons:
@@ -143,13 +143,11 @@ params:
           url: https://github.com/yuyuan871111
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/yuyuan871111/
-        - icon: fab fa-x-twitter
-          url: https://twitter.com/adp871111
-        - icon: fab fa-facebook
-          url: https://www.facebook.com/adp871111
-      # customIcons:
-      #   - icon: /fav.png
-      #     url: "https://example.com"
+        - icon: fab fa-researchgate
+          url: https://www.researchgate.net/profile/Yu-Yuan-Yang
+      customIcons:
+        - icon: /icons/google-scholar.png
+          url: https://scholar.google.com/citations?user=_UlrhSsAAAAJ&hl=en
 
   # About
   about:
@@ -163,8 +161,8 @@ params:
       title: "Here are a few technologies I've been working with recently:"
       items:
         - "Pytorch, Scikit-learn"
-        - "GROMACS, MDAnalysis"
-        - "RDKit"
+        - "GROMACS"
+        - "RDKit, MDAnalysis"
         - "pymol, VMD"
         - "R, RShiny, ggplot2"
         - "Ruby on Rails"
@@ -182,23 +180,15 @@ params:
         #   enable: true
         #   name: "View the project"
         #   url: "https://example.com"
-        content: "I am a PhD student as a software developer at London, UK. I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory."
+        content: |
+          I am a PhD student as a software developer at London, UK. I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory.
 
-      # - job: "Software Developer"
-      #   company: "Amazon"
-      #   companyUrl: "https://example.com"
-      #   date: "Sep 2020 - Dec 2021"
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
-      #   info:
-      #     enable: true
-      #     content: I worked as a software developer for more than one year in Amazon.
-      #   content: |
-      #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-      #     - Lead backend developer for a product.
-      #     - Created a frontend design for a product.
+      - job: "Master research student"
+        company: "National Taiwan University"
+        companyUrl: "https://www.bebi.ntu.edu.tw/"
+        date: "Sep 2021 - Apr 2023"
+        content: |
+          I was a master research student at Taipei, Taiwan.
 
       # - job: "Junior Software Developer"
       #   company: "Apple"
@@ -385,10 +375,8 @@ params:
       enable: true
       disableFeaturedImage: false
     socialNetworks:
-      github: https://github.com/yuyuan871111
-      linkedin: https://linkedin.com/in/yuyuan871111
       twitter: https://twitter.com/adp871111
-      # instagram: https://instagram.com
+      instagram: https://www.instagram.com/yuy_qmul_diary?igsh=YnB0bWpvOHg3N2Vp&utm_source=qr
       facebook: https://facebook.com/adp871111
 
   # List pages like blogs and posts
