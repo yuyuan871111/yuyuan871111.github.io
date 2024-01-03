@@ -5,15 +5,15 @@ draft: false
 description: "My gallery :earth_asia:"
 layout: "gallery"
 galleryImages:
- - src: /images/gallery/pic01.jpeg
- - src: /images/gallery/pic02.jpeg
- - src: /images/gallery/pic03.jpg
- - src: /images/gallery/pic04.jpeg
- - src: /images/gallery/pic05.jpeg
- - src: /images/gallery/pic06.jpeg
- - src: /images/gallery/pic07.jpeg
- - src: /images/gallery/pic08.jpeg
- - src: /images/gallery/pic09.jpeg
+ - src: /images/gallery_pics/pic01.jpeg
+ - src: /images/gallery_pics/pic02.jpeg
+ - src: /images/gallery_pics/pic03.jpg
+ - src: /images/gallery_pics/pic04.jpeg
+ - src: /images/gallery_pics/pic05.jpeg
+ - src: /images/gallery_pics/pic06.jpeg
+ - src: /images/gallery_pics/pic07.jpeg
+ - src: /images/gallery_pics/pic08.jpeg
+ - src: /images/gallery_pics/pic09.jpeg
 ---
 ## Miscellaneous:
 * Youtube channel: [link](https://www.youtube.com/channel/UCfH8Wr_UZNJgjcJRRN3Q5CA).  
