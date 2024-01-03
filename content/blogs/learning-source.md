@@ -9,7 +9,7 @@ tags:
   - useful python packages
   - toolbox
   - developer software
-# image: /images/post.jpg
+image: /images/blog_pics/python_screen.png
 description: ""
 toc: 
 ---
