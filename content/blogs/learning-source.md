@@ -1,6 +1,6 @@
 ---
 title: "Learning resource"
-date: 2024-06-19T12:24:11Z
+date: 2024-06-18T15:18:11Z
 draft: false
 # github_link: "https://github.com/gurusabarish/hugo-profile"
 author: "Yu-Yuan (Stuart) Yang"
@@ -10,11 +10,11 @@ tags:
   - toolbox
   - developer software
 image: /images/blog_pics/python_screen.png
-description: "Learn to use programming developing tools to assist in writing well-organized codes."
+description: "The learning resource to become an advanaced programming writer."
 toc: 
 ---
 
-> Learning python and become a advanced programmer.
+> Learning python and become an advanced programmer.
 
 ## Programming developing tools
 Learning from CMDM-workshop:  

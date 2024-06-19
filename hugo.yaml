@@ -181,7 +181,12 @@ params:
         #   name: "View the project"
         #   url: "https://example.com"
         content: |
-          I am a PhD student as a software developer at London, UK. I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory.
+          I am a PhD student as a software developer at London, UK. 
+          I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory.
+        featuredLink:
+          enable: true
+          name: "Project page"
+          url: "https://www.qmul.ac.uk/sbbs/staff/yuyuanyang.html"
 
       - job: "Research student/Teaching assistant"
         company: "National Taiwan University"
@@ -189,16 +194,12 @@ params:
         date: "Sep 2021 - Apr 2023"
         content: |
           I was a master research student and teaching assistant at Taipei, Taiwan.
-          - Master research topics: 
-            - Structural Biologiy: Molecular dynamics simulation of the SARS-CoV-2 spike protein
-            - Health informatics: FastEval Parkinsonism -- A web-based tool for the diagnosis of Parkinson's disease
-            - Cheminformatics
-            - Quantum computing
+          - Master research topics: structural biology, health informatics, cheminformatics and quantum computing.
           - Teaching assistant: Calculus (Sep 2021 - Jun 2022)
 
       - job: "Previous job"
         company: "More info on Linkedin"
-        date: "past time"
+        date: "before 2021"
         companyUrl: "https://www.linkedin.com/in/yuyuan871111/"
 
       # - job: "UI/UX Designer"
@@ -219,83 +220,54 @@ params:
     # title: "Custom Name"
     index: false
     items:
-      - title: "PhD in AI for drug discovery"
+      - title: "PhD in Artificial Intelligence for Drug Discovery"
         school:
           name: "Queen Mary University of London"
-          url: "https://www.qmul.ac.uk/sbbs/staff/yuyuanyang.html"
+          url: "https://www.qmul.ac.uk"
         date: "2023 - present"
+        content: |-
+          I am under the [UKRI-AIDD Doctoral Training Programme](https://www.qmul.ac.uk/deri/ukri-aidd-doctoral-training-programme/), supervised by Prof. Richard Pickersgill and Dr. Arianna Fornili. 
+          - Webpage for [Richard Lab](https://www.qmul.ac.uk/sbbs/staff/richardpickersgill.html).
+          - Webpage for [Arianna Lab](https://afornililab.wordpress.com/). 
 
       - title: "Master of Scinece in Biomedical Electronics and Bioinformatics"
         school:
           name: "National Taiwan University"
-          url: "https://www.bebi.ntu.edu.tw/"
+          url: "https://www.ntu.edu.tw/"
         date: "2021 - 2023"
         GPA: "4.11 out of 4.3"
-        # content: |-
+        content: |-
+          [Biomedical Electronics and Bioinformatics](https://www.bebi.ntu.edu.tw/)
         #   Extracurricular Activities
         #     - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
       
-      - title: "Bachelor of Science and Engineering in Agricultural Chemistry and Chemical Engineering (double majors)"
+      - title: "BSc. in Agricultural Chemistry and BEng. in Chemical Engineering (double majors)"
         school:
           name: "National Taiwan University"
+          url: "https://www.ntu.edu.tw/"
         date: "2016 - 2021"
         GPA: "4.04 out of 4.3"
-        featuredLink:
-          enable: true
-          name: "Chemical Engineering"
-          url: "https://che.ntu.edu.tw//che/Default.html"
-        featuredLink2:
-          enable: true
-          name: "Agricultrual chemistry"
-          url: "https://www.ac.ntu.edu.tw/"
-        # content: |-
-          # I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
-          # - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
-          # - Face mask detection using a single convolutional neural network.
+        content: |-
+          - [Chemical Engineering](https://che.ntu.edu.tw/che/Default.html)
+          - [Agricultural Chemistry](https://www.ac.ntu.edu.tw/)
 
-          # Extracurricular Activities
-          #   - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          #   - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
         # featuredLink:
         #   enable: true
         #   name: "My academic record"
         #   url: "https://example.com"
-
-
-  # Achievements
-  achievements:
-    enable: true
-    # title: "Custom Name"
-    items:
-      - title: content
-        content: "To be updated"
-        image: /images/tbu.jpg
-      # - title: Google kickstart runner
-      #   content: I solved all problems with optimal solution.
-      #   url: https://example.com
-      #   image: /images/achievment.jpg
-      # - title: Facebook Hackathon Winner
-      #   content: Developed a product using Artificial Intelligence.
-      #   image: /images/achievment.jpg
-      # - title: Hugo Profile
-      #   content: Developed a theme and getting 1K+ downloads per month.
-      #   url: "https://github.com/gurusabarish/hugo-profile"
-      #   image: /images/achievment.jpg
-      # - title: Microsoft Imagine Runner
-      #   content: We are developed a product which can help others.
-      # - title: Google Summer of Code
-      #   content: Contributed to a open source project.
-      #   url: https://example.com
 
   # projects
   projects:
     enable: true
     # title: "Custom Name"
     items:
-      - title: To be updated
-        content: "To be updated"
-        image: /images/tbu.jpg
+      - title: FastEval Parkinsonism
+        content: "Parkinsonism is a medical condition characterized by tremors, slow movement (bradykinesia), stiffness, and difficulty with balance. Our tool offers a video-based solution for users self-assess the likelihood of Parkinsonism."
+        image: /images/fastevalp.png
+        featured:
+          name: "Web services"
+          link: "https://fastevalp.cmdm.tw/"
       
       # - title: Hugo Profile
       #   content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
@@ -342,7 +314,33 @@ params:
       #     - icon: fab fa-github
       #       url: https://github.com/gurusabarish/HugoProfileV2
 
-  #Contact
+  # Achievements
+  achievements:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: Publication
+        content: "See my full publication list and conference attendance."
+        url: "/blogs/publication"
+        image: /images/publication_abstract.png
+      - title: Honors
+        content: "See my honors and awards."
+        url: "/blogs/honors"
+        image: /images/achievement.png
+      # - title: Facebook Hackathon Winner
+      #   content: Developed a product using Artificial Intelligence.
+      #   image: /images/achievment.jpg
+      # - title: Hugo Profile
+      #   content: Developed a theme and getting 1K+ downloads per month.
+      #   url: "https://github.com/gurusabarish/hugo-profile"
+      #   image: /images/achievment.jpg
+      # - title: Microsoft Imagine Runner
+      #   content: We are developed a product which can help others.
+      # - title: Google Summer of Code
+      #   content: Contributed to a open source project.
+      #   url: https://example.com
+  
+  # Contact
   contact:
     enable: true
     # title: "Custom Name"
