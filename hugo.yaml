@@ -219,6 +219,12 @@ params:
     # title: "Custom Name"
     index: false
     items:
+      - title: "PhD in AI for drug discovery"
+        school:
+          name: "Queen Mary University of London"
+          url: "https://www.qmul.ac.uk/sbbs/staff/yuyuanyang.html"
+        date: "2023 - present"
+
       - title: "Master of Scinece in Biomedical Electronics and Bioinformatics"
         school:
           name: "National Taiwan University"
@@ -230,19 +236,19 @@ params:
         #     - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
       
-      - title: "Bachelor of Engineering in Chemical Engineering (double degree)"
+      - title: "Bachelor of Science and Engineering in Agricultural Chemistry and Chemical Engineering (double majors)"
         school:
           name: "National Taiwan University"
-          url: "https://che.ntu.edu.tw//che/Default.html"
-        date: "2017 - 2021"
-        GPA: "4.04 out of 4.3"
-      
-      - title: "Bachelor of Science in Agricultural Chemistry"
-        school:
-          name: "National Taiwan University"
-          url: "https://www.ac.ntu.edu.tw/"
         date: "2016 - 2021"
         GPA: "4.04 out of 4.3"
+        featuredLink:
+          enable: true
+          name: "Chemical Engineering"
+          url: "https://che.ntu.edu.tw//che/Default.html"
+        featuredLink2:
+          enable: true
+          name: "Agricultrual chemistry"
+          url: "https://www.ac.ntu.edu.tw/"
         # content: |-
           # I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
           # - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
@@ -255,14 +261,7 @@ params:
         #   enable: true
         #   name: "My academic record"
         #   url: "https://example.com"
-      # - title: "High School"
-      #   school:
-      #     name: "Thomas Jefferson High School for Science and Technology."
-      #     url: "https://example.org"
-      #   GPA: "4.2 out of 5.0"
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
+
 
   # Achievements
   achievements:
