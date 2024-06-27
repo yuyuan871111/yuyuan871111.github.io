@@ -263,8 +263,17 @@ params:
     # title: "Custom Name"
     items:
       - title: FastEval Parkinsonism
-        content: "Parkinsonism is a medical condition characterized by tremors, slow movement (bradykinesia), stiffness, and difficulty with balance. Our tool offers a video-based solution for users self-assess the likelihood of Parkinsonism."
-        image: /images/fastevalp.png
+        badges:
+          - "Medical informatics"
+          - "Online motor assessment"
+          - "Python"
+          - "Ruby on Rails"
+        content: |-
+          Parkinsonism is a medical condition characterized by tremors, slow movement (bradykinesia), stiffness, and difficulty with balance. Our tool offers a video-based solution for users self-assess the likelihood of Parkinsonism.
+        image: /images/blog_pics/fastevalp.png
+        links:
+        - icon: fab fa-github
+          url: https://github.com/yuyuan871111/fast_eval_Parkinsonism
         featured:
           name: "Web services"
           link: "https://fastevalp.cmdm.tw/"
@@ -319,14 +328,14 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - title: Publication
+      - title: "Publication & conference"
         content: "See my full publication list and conference attendance."
         url: "/blogs/publication"
-        image: /images/publication_abstract.png
+        image: /images/blog_pics/publication_abstract.png
       - title: Honors
         content: "See my honors and awards."
         url: "/blogs/honors"
-        image: /images/achievement.png
+        image: /images/blog_pics/achievement.png
       # - title: Facebook Hackathon Winner
       #   content: Developed a product using Artificial Intelligence.
       #   image: /images/achievment.jpg

@@ -1,13 +1,13 @@
 ---
-title: "Publication"
-date: 2024-06-18T15:18:11Z
+title: "Publication & conference"
+date: 2024-06-26T15:18:11Z
 draft: false
 # github_link: "https://github.com/gurusabarish/hugo-profile"
 author: "Yu-Yuan (Stuart) Yang"
 tags:
   - publication
   - conference
-image: /images/publication_abstract.png
+image: /images/blog_pics/publication_abstract.png
 description: "publication list and conference attendence"
 toc: 
 ---
@@ -27,27 +27,28 @@ gg { color: Green }
 1\. [<gg>review</gg>] Wang, P. H., Chen J. H., **Yang, Y. Y.**, Lee, C., and Tseng, Y. J. (Mar. 2023). “Recent advances in quantum computing for drug discovery and development.” IEEE Nanotechnology Magazine, DOI: [10.1109/MNANO.2023.3249499](https://doi.org/10.1109/MNANO.2023.3249499)
 
 ## Conference
-(also including **Symposium**, **Winter school** and **Summer school**)
+(also including **Symposium**, **Forum**, **Winter school** and **Summer school**)
 ### Attendence with presentation
 #### 2024
-7\. [<r>poster, incoming</r>] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. (July 2024). "Deep learning for binding site segmentation in protein ensembles." CCP5 summer school 2024 (14-25 Jul.)  
-6\. [<r>poster, incoming</r>] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. (June 2024). "Deep learning for binding site segmentation in protein ensembles." UKRI/BBSRC AI for Drug Discovery Summer Symposium 2024 (26 Jun.)    
-5\. [<r>poster</r>] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A.. "Deep learning for binding site segmentation in protein ensembles." Thomas Young Centre (TYC) Postgraduate Student Day 2024 (22 May)   
+8\. [<r>poster, incoming</r>] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. "Deep learning for binding site segmentation in protein ensembles." CCP5 summer school 2024 ([Newcastle, UK](https://maps.app.goo.gl/PVvYzEXCLUDoQVrh6), 14-25 Jul.)   
+7\. [<r>poster</r>] **Yang, Y. Y.**, Ismail, N. M., Siu, P. C., Occhetta, M., Mellor, C., Dai, W., Finke, B., Bessant, C, Walker, A., and Crowther, D. "Graph Linkage and Database Cross-Reference in Assay Cascade Analysis for Acute Myeloid Leukemia (AML)." UKRI/BBSRC AI for Drug Discovery Summer Symposium 2024. ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 26 Jun.)    
+6\. [<r>poster</r>] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. "Deep learning for binding site segmentation in protein ensembles." UKRI/BBSRC AI for Drug Discovery Summer Symposium 2024. ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 26 Jun.)    
+5\. [<r>poster</r>] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A.. "Deep learning for binding site segmentation in protein ensembles." Thomas Young Centre (TYC) Postgraduate Student Day 2024. ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 22 May)   
 #### 2022 
-4\. [<r>poster, virtual</r>] Wang, P. H., **Yang, Y. Y.**, and Tseng, Y. J. “QSAR model of carcinogenicity based on data from GreenScreen hazard assessment.” American Chemical Society (ACS) Fall 2022 (21–25 Aug.)  
-3\. [<r>poster, virtual</r>] Wang, Y. K., **Yang, Y. Y.**, Chang, C. Y., and Tseng, Y. J. “Current trends in safer alternatives and risk assessment.” American Chemical Society (ACS) Fall 2022  (21–25 Aug.)  
-2\. [<r>poster, virtual</r>] Kuo, T. C., Wang, P. H., Wang, Y. K., **Yang, Y. Y.**, Yao, P. Y., Jhong Y. C., Chang, C. Y., Lee, C. Y. and Tseng, Y. J. “Benchmark dataset for hazardous substances for safer alternative chemicals.” American Chemical Society (ACS) Fall 2022 (21–25 Aug.)   
-1\. [<bb>oral, virtual</bb>] **Yang, Y. Y.** and Tseng, Y. J. “Competitive analysis of different SARS-CoV-2 variants in United Kingdom, Israel, South Africa, Brazil and Peru.” American Chemical Society (ACS) Spring 2022 (20–24 Mar.)   
+4\. [<r>poster</r>] Wang, P. H., **Yang, Y. Y.**, and Tseng, Y. J. “QSAR model of carcinogenicity based on data from GreenScreen hazard assessment.” American Chemical Society (ACS) Fall 2022. [[link]](https://acs.digitellinc.com/p/s/qsar-model-of-carcinogenicity-based-on-data-from-greenscreen-hazard-assessment-524763) (virtual, 21–25 Aug.)   
+3\. [<r>poster</r>] Wang, Y. K., **Yang, Y. Y.**, Chang, C. Y., and Tseng, Y. J. “Current trends in safer alternatives and risk assessment.” American Chemical Society (ACS) Fall 2022. [[link]](https://acs.digitellinc.com/p/s/current-trends-in-safer-alternatives-and-risk-assessment-524775) (virtual, 21–25 Aug.)   
+2\. [<r>poster</r>] Kuo, T. C., Wang, P. H., Wang, Y. K., **Yang, Y. Y.**, Yao, P. Y., Jhong Y. C., Chang, C. Y., Lee, C. Y. and Tseng, Y. J. “Benchmark dataset for hazardous substances for safer alternative chemicals.” American Chemical Society (ACS) Fall 2022. [[link]](https://acs.digitellinc.com/p/s/benchmark-dataset-for-hazardous-substances-for-safer-alternative-chemicals-524771) (virtual, 21–25 Aug.)   
+1\. [<bb>oral</bb>] **Yang, Y. Y.** and Tseng, Y. J. “Competitive analysis of different SARS-CoV-2 variants in United Kingdom, Israel, South Africa, Brazil and Peru.” American Chemical Society (ACS) Spring 2022. [[link]](https://www.morressier.com/o/event/623377e0b300ee00119b311f/article/6234a182818a915252b7f606) (virtual, 20–24 Mar.)   
 
 ### Attendence only
 #### 2024
-9\. UCL information studies reserach open day (3 Jun.)  
-8\. 2024 UK-QSAR Spring Meeting (11 Apr.)  
-7\. AI UK 2024 (19-20 Mar.) 
-6\. BMCS Conformational Design in Drug Discovery 2024 (07 Mar.)  
-5\. SBBS PGR symposium 2024 (4 Mar.)  
-4\. Festival of Genomics and Biodata 2024 (24-25 Jan.)   
-3\. AIDD winter school 2024 (16-17 Jan.)  
+9\. UCL information studies reserach open day ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 3 Jun.)  
+8\. 2024 UK-QSAR Spring Meeting ([Babraham](https://maps.app.goo.gl/5HJDriRmLYFJLcDw9), 11 Apr.)  
+7\. AI UK 2024 ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 19-20 Mar.) 
+6\. BMCS Conformational Design in Drug Discovery 2024 ([Stevenage](https://maps.app.goo.gl/pzgqV9jYTXWsFNHz6), 07 Mar.)  
+5\. QMUL SBBS PGR symposium 2024 ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 4 Mar.)  
+4\. Festival of Genomics and Biodata 2024 ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 24-25 Jan.)   
+3\. AIDD winter school 2024 ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 16-17 Jan.)  
 #### 2023
-2\. 27th MGMS Young Modellers’ Forum (YMF) 2023 (24 Nov.)    
-1\. AI at a Turning Point: How Can We Create Equitable AI Governance Futures? (02 Nov.)  
+2\. 27th MGMS Young Modellers’ Forum (YMF) 2023 (Oxford, 24 Nov.)    
+1\. AI at a Turning Point: How Can We Create Equitable AI Governance Futures? ([London](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 02 Nov.)  
