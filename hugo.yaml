@@ -172,8 +172,8 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - job: "UKRI-AIDD PhD student"
-        company: "Queen Mary University of London"
+      - job: "PhD student/Demostrator"
+        company: "QMUL"
         companyUrl: "https://www.qmul.ac.uk/deri/ukri-aidd-doctoral-training-programme/people-/"
         date: "Sep 2023 - present"
         # featuredLink:
@@ -181,21 +181,24 @@ params:
         #   name: "View the project"
         #   url: "https://example.com"
         content: |
-          I am a PhD student as a software developer at London, UK. 
-          I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory.
+          I am a UKRI-funded PhD student in artificial intelligence for drug discovery (AIDD), software developer and demonstrator in London, UK. 
+          I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory
+          [project code: DLPROBSEG].
+          - Demonstrator: CHE209 (python), BIO213 (planarian regeneration),
+          SEF032 (enzymology of β-galactosidase with absorbance spectrometry; extracting DNA from kiwi fruit) (Jan. 2024 - present)
         featuredLink:
           enable: true
-          name: "Project page"
+          name: "SBBS Profile page"
           url: "https://www.qmul.ac.uk/sbbs/staff/yuyuanyang.html"
 
       - job: "Research student/Teaching assistant"
-        company: "National Taiwan University"
+        company: "NTU"
         companyUrl: "https://www.bebi.ntu.edu.tw/"
         date: "Sep 2021 - Apr 2023"
         content: |
-          I was a master research student and teaching assistant at Taipei, Taiwan.
-          - Master research topics: structural biology, health informatics, cheminformatics and quantum computing.
-          - Teaching assistant: Calculus (Sep 2021 - Jun 2022)
+          I was a master research student and teaching assistant in Taipei, Taiwan.
+          - Master research topics: structural biology [project code: COVIDVARI], health informatics [project code: FASTEVALP], cheminformatics [project code: SASDBQSAR] and quantum computing [project code: QUANTCADD].
+          - Teaching assistant: Calculus (Sep. 2021 - Jun. 2022)
 
       - job: "Previous job"
         company: "More info on Linkedin"
@@ -226,9 +229,9 @@ params:
           url: "https://www.qmul.ac.uk"
         date: "2023 - present"
         content: |-
-          I am under the [UKRI-AIDD Doctoral Training Programme](https://www.qmul.ac.uk/deri/ukri-aidd-doctoral-training-programme/), supervised by Prof. Richard Pickersgill and Dr. Arianna Fornili. 
-          - Webpage for [Richard Lab](https://www.qmul.ac.uk/sbbs/staff/richardpickersgill.html).
-          - Webpage for [Arianna Lab](https://afornililab.wordpress.com/). 
+          I am under the [UKRI-AIDD Doctoral Training Programme](https://www.qmul.ac.uk/deri/ukri-aidd-doctoral-training-programme/), 
+          supervised by [Prof. Richard Pickersgill](https://www.qmul.ac.uk/sbbs/staff/richardpickersgill.html) and Dr. Arianna Fornili. 
+          - Webpage for [Arianna's Lab](https://afornililab.wordpress.com/). 
 
       - title: "Master of Scinece in Biomedical Electronics and Bioinformatics"
         school:
@@ -237,7 +240,8 @@ params:
         date: "2021 - 2023"
         GPA: "4.11 out of 4.3"
         content: |-
-          [Biomedical Electronics and Bioinformatics](https://www.bebi.ntu.edu.tw/)
+          I studied in the graduate institue of [Biomedical Electronics and Bioinformatics](https://www.bebi.ntu.edu.tw/), supervised by Prof. Yufeng Jane Tseng.
+          - Webpage for [Tseng's Lab (computational molecular design & metabolomics)](https://www.cmdm.tw/).
         #   Extracurricular Activities
         #     - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
@@ -265,11 +269,15 @@ params:
       - title: FastEval Parkinsonism
         badges:
           - "Medical informatics"
-          - "Online motor assessment"
-          - "Python"
+          - "Remote motor assessment"
+          - "Web-based"
+          - "Video-based"
+          - "Deep learning"
+          - "PyTorch"
           - "Ruby on Rails"
         content: |-
           Parkinsonism is a medical condition characterized by tremors, slow movement (bradykinesia), stiffness, and difficulty with balance. Our tool offers a video-based solution for users self-assess the likelihood of Parkinsonism.
+          [project code: FASTEVALP]
         image: /images/blog_pics/fastevalp.png
         links:
         - icon: fab fa-github

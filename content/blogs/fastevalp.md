@@ -8,7 +8,7 @@ tags:
   - Parkinson's disease
   - Artificial intelligence
   - motor assessment
-image: /images/fastevalp.png
+image: /images/blog_pics/fastevalp.png
 description: "Fast evaluation of motor assessment at home."
 toc: 
 ---

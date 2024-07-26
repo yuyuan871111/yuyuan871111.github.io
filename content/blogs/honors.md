@@ -13,7 +13,7 @@ description: "publication list and conference attendence"
 toc: 
 ---
 
-## Honours
+## Honors
 ### Grants / Fellowship / Studentship 
 2\. UKRI/BBSRC AIDD PhD Programme Scholarship (Sep. 2023 – Sep. 2027).  
 1\. Undergraduate Research Fellowship, National Science and Technology Council, Taiwan (Jul 2020 – Feb. 2021).  
