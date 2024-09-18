@@ -183,9 +183,9 @@ params:
         content: |
           I am a UKRI-funded PhD student in artificial intelligence for drug discovery (AIDD), software developer and demonstrator in London, UK. 
           I am currently working on a project that invovles building a deep-learning model to extract the significant conformations from the molecular dynamics trajectory
-          [project code: DLPROBSEG].
+          [[projects](tags/dlprobseg)].
           - Demonstrator: CHE209 (python), BIO213 (planarian regeneration),
-          SEF032 (enzymology of β-galactosidase with absorbance spectrometry; extracting DNA from kiwi fruit) (Jan. 2024 - present)
+          SEF032 (enzymology of β-galactosidase with absorbance spectrometry; extracting DNA from kiwi fruit) (2024 spring)
         featuredLink:
           enable: true
           name: "SBBS Profile page"
@@ -194,11 +194,14 @@ params:
       - job: "Research student/Teaching assistant"
         company: "NTU"
         companyUrl: "https://www.bebi.ntu.edu.tw/"
-        date: "Sep 2021 - Apr 2023"
+        date: "Sep 2019 - Apr 2023"
         content: |
-          I was a master research student and teaching assistant in Taipei, Taiwan.
-          - Master research topics: structural biology [project code: COVIDVARI], health informatics [project code: FASTEVALP], cheminformatics [project code: SASDBQSAR] and quantum computing [project code: QUANTCADD].
-          - Teaching assistant: Calculus (Sep. 2021 - Jun. 2022)
+          I was a undergraduate research student in Taipei, Taiwan (Sep 2019 - Jun 2021).
+          - Topics: whey protein fibril application on emulsion stability [[project](/tags/wpifemusl)].
+          
+          I was a master research student and teaching assistant (Jun 2021 - Apr 2023).
+          - Topics: structural biology [[project](/tags/covidvari)], health informatics [[project](/tags/fastevalp)], cheminformatics [[project](/tags/sasdbqsar)] and quantum computing [[project](/tags/quantcadd)].
+          - Teaching assistant: Calculus (2021 autumn, 2022 spring)
 
       - job: "Previous job"
         company: "More info on Linkedin"
@@ -230,7 +233,7 @@ params:
         date: "2023 - present"
         content: |-
           I am under the [UKRI-AIDD Doctoral Training Programme](https://www.qmul.ac.uk/deri/ukri-aidd-doctoral-training-programme/), 
-          supervised by [Prof. Richard Pickersgill](https://www.qmul.ac.uk/sbbs/staff/richardpickersgill.html) and Dr. Arianna Fornili. 
+          supervised by [Prof. Richard Pickersgill](https://www.qmul.ac.uk/sbbs/staff/richardpickersgill.html) and [Dr. Arianna Fornili](https://www.qmul.ac.uk/spcs/staff/academics/profiles/ariannafornili.html). 
           - Webpage for [Arianna's Lab](https://afornililab.wordpress.com/). 
 
       - title: "Master of Scinece in Biomedical Electronics and Bioinformatics"
@@ -253,8 +256,9 @@ params:
         date: "2016 - 2021"
         GPA: "4.04 out of 4.3"
         content: |-
-          - [Chemical Engineering](https://che.ntu.edu.tw/che/Default.html)
-          - [Agricultural Chemistry](https://www.ac.ntu.edu.tw/)
+          - Major 1: [Agricultural Chemistry](https://www.ac.ntu.edu.tw/)
+          - Major 2: [Chemical Engineering](https://che.ntu.edu.tw/che/Default.html)
+          
 
         # featuredLink:
         #   enable: true
@@ -276,15 +280,27 @@ params:
           - "PyTorch"
           - "Ruby on Rails"
         content: |-
-          Parkinsonism is a medical condition characterized by tremors, slow movement (bradykinesia), stiffness, and difficulty with balance. Our tool offers a video-based solution for users self-assess the likelihood of Parkinsonism.
-          [project code: FASTEVALP]
+          Parkinsonism is a medical condition characterized by tremors, slow movement (bradykinesia), stiffness, and difficulty with balance. 
+          Our tool offers a video-based solution for users self-assess the likelihood of Parkinsonism.
         image: /images/blog_pics/fastevalp.png
-        links:
+        links: 
+        - icon: fa-solid fa-blog
+          url: /blogs/fastevalp
         - icon: fab fa-github
           url: https://github.com/yuyuan871111/fast_eval_Parkinsonism
         featured:
           name: "Web services"
           link: "https://fastevalp.cmdm.tw/"
+      
+      - title: Whey Protein Fibril Microcapsules
+        badges:
+          - "Wet lab"
+        content: |-
+          This study investigated the stability and antioxidant properties of bilayer microcapsules made from acidic/alkaline polysaccharide–whey protein isolate fibrils (WPF) containing β-carotene, under acidic conditions.
+        image: /images/blog_pics/whey_protein_scoop.jpg
+        links: 
+        - icon: fa-solid fa-blog
+          url: /blogs/wpifemusl
       
       # - title: Hugo Profile
       #   content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
