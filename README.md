@@ -1,5 +1,6 @@
-# Personal_web
-[![Deploy Hugo site to Pages](https://github.com/yuyuan871111/yuyuan871111.github.io/actions/workflows/hugo.yml/badge.svg)](https://github.com/yuyuan871111/yuyuan871111.github.io/actions/workflows/hugo.yml)
+
+# Personal_web 
+[![Deploy Hugo site to Pages](https://github.com/yuyuan871111/yuyuan871111.github.io/actions/workflows/hugo.yml/badge.svg)](https://github.com/yuyuan871111/yuyuan871111.github.io/actions/workflows/hugo.yml)  
 New website built on [HUGO](https://gohugo.io/getting-started/quick-start/) with [hugo-profile](https://github.com/gurusabarish/hugo-profile) template.
 
 ## cheatsheet for hugo
