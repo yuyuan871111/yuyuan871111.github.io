@@ -6,7 +6,7 @@ draft: False
 author: "Yu-Yuan (Stuart) Yang"
 tags:
   - QUANTCADD
-image: 
+image: /images/blog_pics/quantum_in_aidd.png
 description: ""
 toc: 
 ---
