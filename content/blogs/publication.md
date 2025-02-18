@@ -1,6 +1,6 @@
 ---
 title: "Publication & Conference"
-date: 2024-09-17T15:18:11Z
+date: 2025-02-17T15:18:11Z
 draft: false
 # github_link: "https://github.com/gurusabarish/hugo-profile"
 author: "Yu-Yuan (Stuart) Yang"
@@ -26,7 +26,7 @@ This is a summary list for my publication and conference, which is updated manua
 
 #### 2024
 5\. [<o>protocol article</o>, [FASTEVALP](/tags/fastevalp)] **Yang, Y. Y.**, Ho, M. Y., Tai, C. H., Wu, R. M., Kuo, M. C., and Tseng, Y. J. (Feb. 2024). "FastEval Parkinsonism: an instant deep learning–assisted video-based online system for Parkinsonian motor symptom evaluation." NPJ Digital Medicine, DOI: [10.1038/s41746-024-01022-x](https://doi.org/10.1038/s41746-024-01022-x)  
-4\. [<o>protocol article</o>, [WPIFEMUSL](/tags/wpfiemusl)] **Yang, Y. Y.**, Lai, Y. R., How, S. C., Lin, T. H., and Wang, S. S. S. (Jan. 2024). "Encapsulation with a complex of acidic/alkaline polysaccharide-whey protein isolate fibril bilayer microcapsules enhances the stability of β-carotene under acidic environments." Journal of the Taiwan Institute of Chemical Engineers, DOI: [10.1016/j.jtice.2024.105344](https://doi.org/10.1016/j.jtice.2024.105344)   
+4\. [<o>protocol article</o>, [WPIFEMUSL](/tags/wpifemusl)] **Yang, Y. Y.**, Lai, Y. R., How, S. C., Lin, T. H., and Wang, S. S. S. (Jan. 2024). "Encapsulation with a complex of acidic/alkaline polysaccharide-whey protein isolate fibril bilayer microcapsules enhances the stability of β-carotene under acidic environments." Journal of the Taiwan Institute of Chemical Engineers, DOI: [10.1016/j.jtice.2024.105344](https://doi.org/10.1016/j.jtice.2024.105344)   
 
 #### 2023
 3\. [<y>thesis</y>, [FASTEVALP](/tags/fastevalp)] **Yang, Y. Y.** (April 2023). “FastEval Parkinsonism: an instant deep learning-based online self-evaluation system for the diagnosis of Parkinson's symptoms with hand videos using finger tapping.” NTU BEBI (***2023 Best Master Thesis Award***), DOI:[10.6342/NTU202300716](https://doi.org/10.6342/NTU202300716)  
@@ -50,6 +50,8 @@ This is a summary list for my publication and conference, which is updated manua
 1\. [<bb>oral</bb>, [COVIDVARI](/tags/covidvari)] **Yang, Y. Y.** and Tseng, Y. J. “Competitive analysis of different SARS-CoV-2 variants in United Kingdom, Israel, South Africa, Brazil and Peru.” American Chemical Society (ACS) Spring 2022. ([virtual](https://www.morressier.com/o/event/623377e0b300ee00119b311f/article/6234a182818a915252b7f606), 20–24 Mar.)   
 
 ### Attendence only
+#### 2025
+10\. Biologics by Design Europe 2025 (virtual, 29 Jan.)
 #### 2024
 9\. UCL information studies reserach open day ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 3 Jun.)  
 8\. 2024 UK-QSAR Spring Meeting ([Babraham, UK](https://maps.app.goo.gl/5HJDriRmLYFJLcDw9), 11 Apr.)  
