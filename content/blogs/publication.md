@@ -54,7 +54,7 @@ This is a summary list for my publication and conference, which is updated manua
 
 ### Attendence (as an organizer)
 #### 2024 
-1\. 18th Interdiscipline Biomedical Sciences conference (iBS18) hosted by London Biomedical Taiwanes Society (LTBS) ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 26 Oct.)   
+1\. 18th Interdiscipline Biomedical Sciences conference (iBS18) hosted by London Biomedical Taiwanes Society (LTBS) ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 7 Dec.)   
 
 
 ### Attendence only
