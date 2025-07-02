@@ -270,6 +270,43 @@ params:
     enable: true
     # title: "Custom Name"
     items:
+      - title: Google Summer of Code 2025 - MDAnalysis x ProLIF project 5 (implicit HBond interaction)
+        badges:
+          - "Molecular dynamics"
+          - "Implicit H-bond interaction"
+          - "MDAnalysis"
+          - "ProLIF"
+          - "RDKit"
+          - "SMARTS"
+          - "SMILES"
+        content: |-
+          This project aims to develop a new implicit hydrogen bond interaction for the
+          ProLIF library, which is used for analyzing protein-ligand/protein/molecule interactions
+          in molecular dynamics simulations.
+          The new core functions are based on the MDAnalysis and RDKit.
+        image: /images/blog_pics/gsoc.png
+        links: 
+        - icon: fa-solid fa-blog
+          url: /tags/gsocmdapl
+        - icon: fab fa-github
+          url: https://github.com/yuyuan871111/GSoC2025_Hbond_PM
+      
+      - title: Deep learning for protein binding site segmentation
+        badges:
+          - "Deep learning"
+          - "PyTorch"
+          - "Protein binding site segmentation"
+          - "Molecular dynamics"
+          - "Computer vision"
+        content: |-
+          This project aims to build a deep-learning model to extract the significant conformations from the molecular dynamics trajectory.
+          The model is trained on the protein binding site segmentation dataset, which is generated from the MD simulation of the protein-ligand complex.
+        image: /images/blog_pics/protein_ensemble.png
+        links: 
+        - icon: fa-solid fa-blog
+          url: /tags/dlprobseg
+        - icon: fab fa-github
+          url: https://github.com/yuyuan871111/ProBiSEnSe_pymol_plugin
       - title: FastEval Parkinsonism
         badges:
           - "Medical informatics"
@@ -279,13 +316,14 @@ params:
           - "Deep learning"
           - "PyTorch"
           - "Ruby on Rails"
+          - "Computer vision"
         content: |-
           Parkinsonism is a medical condition characterized by tremors, slow movement (bradykinesia), stiffness, and difficulty with balance. 
           Our tool offers a video-based solution for users self-assess the likelihood of Parkinsonism.
         image: /images/blog_pics/fastevalp.png
         links: 
         - icon: fa-solid fa-blog
-          url: /blogs/fastevalp
+          url: /tags/fastevalp
         - icon: fab fa-github
           url: https://github.com/yuyuan871111/fast_eval_Parkinsonism
         featured:
@@ -302,7 +340,7 @@ params:
         image: /images/blog_pics/whey_protein_scoop.jpg
         links: 
         - icon: fa-solid fa-blog
-          url: /blogs/wpifemusl
+          url: /tags/wpifemusl
       
       - title: Structural insights in SARS-CoV-2 Omicron Variants
         content: |-
@@ -316,7 +354,7 @@ params:
           - "Protein-Protein Interaction"
         links:
           - icon: fa fa-blog
-            url: /blogs/covidvari
+            url: /tags/covidvari
 
       # - title: Image Converter
       #   content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.

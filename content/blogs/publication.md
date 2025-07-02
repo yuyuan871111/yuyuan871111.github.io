@@ -38,6 +38,12 @@ This is a summary list for my publication and conference, which is updated manua
 ## Conferences/Events
 (also including **PhD student day**, **Symposium**, **Forum**, **Winter school** and **Summer school**)
 ### Attendence with presentation
+#### 2025
+ 
+13\. [<r>poster</r>, [DLPROBSEG](/tags/dlprobseg)] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. "Holo-like conformation selection using a computer vision-based deep-learning model." QMUL, School of Biological and Behavioural Sciences Postgraduate Researche Symposium 2025 ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 26-27 Jun.)  
+12\. [<bb>oral</bb>, [DLPROBSEG](/tags/dlprobseg)] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. "Holo-like conformation selection using a computer vision-based deep-learning model." UKRI/BBSRC AI for Drug Discovery Summer Symposium 2025. ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 25 Jun.)   
+11\. [<r>poster</r>, [DLPROBSEG](/tags/dlprobseg)] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A.. "Holo-like conformation selection using a computer vision-based deep-learning model." Thomas Young Centre (TYC) Postgraduate Student Day 2025. ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 11 Jun.)    
+
 #### 2024
 10\. [<bb>oral</bb>, [DLPROBSEG](/tags/dlprobseg)] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. "Deep learning for binding site segmentation in protein ensembles." Evotec PhD Day 2024 (virtual and internally at [Evotec](https://www.evotec.com/), 17 Oct.)   
 9\. [<r>poster</r>/<bb>lightening talk</bb>, [DLPROBSEG](/tags/dlprobseg)] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. "Deep learning for binding site segmentation in protein ensembles." MDAnalysis UGM 2024 ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 21-23 Aug.)   

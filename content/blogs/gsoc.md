@@ -1,5 +1,5 @@
 ---
-title: "[Google Summer of Code 2025] MDAnalysis x ProLIF Project 5: H-Bond interactions from implicit hydrogens"
+title: "MDAnalysis x ProLIF Project 5: H-Bond interactions from implicit hydrogens"
 date: 2025-05-18T15:18:11Z
 draft: False
 github_link: "https://github.com/chemosim-lab/ProLIF"
