@@ -172,7 +172,7 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - job: "PhD student/Demostrator"
+      - job: "PhD student/Demonstrator"
         company: "QMUL"
         companyUrl: "https://www.qmul.ac.uk/deri/ukri-aidd-doctoral-training-programme/people-/"
         date: "Sep 2023 - present"
