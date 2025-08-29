@@ -36,4 +36,4 @@ ProLIF, a tool for analyzing protein-molecule interactions in molecular dynamics
 3. [Week 7~8]: Next stage of the project: build more at/until [week 8](/blogs/gsoc-week-8).   
 4. [Week 9~10]: Complete and validate my method at/until [week 10](/blogs/gsoc-week-10).  
 5. [Week 11~12]: Almost reach the end of GSoC journey at [week 12](/blogs/gsoc-week-12).  
-6. [Final report of GSoC]: [GSoC summary](/blogs/gsoc-summary).   
+6. [Final report of GSoC]: [GSoC summary](/blogs/gsoc-week-summary).   
