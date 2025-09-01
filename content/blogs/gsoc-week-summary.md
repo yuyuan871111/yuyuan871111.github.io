@@ -58,7 +58,7 @@ jupyter notebook
 
 Please download the [5da9.pdb](https://www.rcsb.org/structure/5DA9) ([mirror archive](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/test_data/5da9.pdb)) from [RCSB PDB](https://www.rcsb.org/) to your local folder. It is an example of protein-ligand interactions. In this example, `MSE` is a non-standard residue. `MG` and `AGS` are ligands for the complex, whose bond orders can be corrected by using the same  `ProteinHelper` with SMILES strings. 
 
-_You might need to modify the path for the files in the below script. [[Notebook version](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/parse_pdb_files.ipynb)]_
+_You might need to modify the path for the files in the below script. [[Notebook version](https://mdanalysis-x-prolif-project-5-implicit-h-bond-interactions.readthedocs.io/en/latest/notebooks/parse_pdb_files.html)] [[Download here](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/parse_pdb_files.ipynb)]_
 
 ```python  
 # import the required packages  
@@ -120,7 +120,7 @@ Here is the expected result for 3D visualization:
 
 The example shows how to calculate implicit H-bond interactions for a protein-RNA complex from RCSB PDB (experimental: [8AW3](https://www.rcsb.org/structure/8AW3), [mirror archive](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/test_data/8aw3.pdb)) and AlphaFold3 webserver (computational: [8AW3](https://alphafoldserver.com/example/examplefold_pdb_8aw3), [mirror archive](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/test_data/examplefold_pdb_8aw3_model_0.cif)). The `cif` templates for RNA residues ([A](https://www.rcsb.org/ligand/A), [U](https://www.rcsb.org/ligand/U), [C](https://www.rcsb.org/ligand/C), [G](https://www.rcsb.org/ligand/G); [mirror archive](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/tree/main/test_data/templates)) can be found on RCSB PDB. It is noted that the computational structure is in `cif` format, which is not supported by MDAnalysis 2.9.0 (could be supported in the future version). Thus, we currently read it via [gemmi](https://gemmi.readthedocs.io/en/stable/) and converted it into `pdb` format.  
 
-_You might need to modify the path for the files in the below script. [[Notebook version](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/comp_vs_exp.ipynb)]_
+_You might need to modify the path for the files in the below script. [[Notebook version](https://mdanalysis-x-prolif-project-5-implicit-h-bond-interactions.readthedocs.io/en/latest/notebooks/comp_vs_exp.html)] [[Download here](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/comp_vs_exp.ipynb)]_
 ```python  
 # import required packages  
 import prolif as plf  
@@ -205,7 +205,7 @@ Since the implicit H-bond method was a new function of ProLIF, I compared it to 
 * Data archive on Zenodo: [https://doi.org/10.5281/zenodo.16950708](https://doi.org/10.5281/zenodo.16950708)   
 * Mirror archive of Zenodo on Google Drive: [03_Validation_Release](https://drive.google.com/drive/folders/1ZZ9zrzBI82vunOM4xmkiUtQX5Sm-eqND)
 
-_You might need to modify the path for the files in the below script. [[Notebook version](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/implicit_vs_explicit.ipynb)]_
+_You might need to modify the path for the files in the below script. [[Notebook version](https://mdanalysis-x-prolif-project-5-implicit-h-bond-interactions.readthedocs.io/en/latest/notebooks/implicit_vs_explicit.html)] [[Download here](https://github.com/yuyuan871111/GSoC2025_Hbond_PM/blob/main/implicit_vs_explicit.ipynb)]_
 ```python  
 import os  
 import prolif as plf
@@ -303,12 +303,12 @@ Initially, I worked on [ProLIF](https://github.com/chemosim-lab/ProLIF)’s `gso
 
 During my GSoC journey in the summer of 2025, I documented my progress and reflections through blogs. These posts not only shared my experiences but also served as user guides, emphasizing the significance of protein helper and implicit H-bond interactions. If you're curious about what I accomplished and want a glimpse into what your own GSoC experience might look like, feel free to explore the links below.
 
-* Introduction of my GSoC 2025 project, MDAnalysis, and ProLIF  [[GSoC 2025 - Week 0](https://yuyuan871111.github.io/blogs/gsoc/%20)]   
-* Protein helper function fixed your bond orders of residues (molecules) [[GSoC 2025 - Week 4](https://yuyuan871111.github.io/blogs/gsoc-week-4/%20)]  
-* Have a better design of protein helper function during code reviews [[GSoC 2025 - Week 6](https://yuyuan871111.github.io/blogs/gsoc-week-6/%20)]   
-* What is the implicit hydrogen? Why need an additional interaction class? [[GSoC 2025 - Week 8](https://yuyuan871111.github.io/blogs/gsoc-week-8/%20)]   
-* Validation and Optimization: tuning parameters for the implicit H-bond interaction method using datasets [[GSoC 2025 - Week 10](https://yuyuan871111.github.io/blogs/gsoc-week-10/%20)]   
-* Development Wrap-Up: PINDER validation and comprehensive documentation [[GSoC 2025 - Week 12](https://yuyuan871111.github.io/blogs/gsoc-week-12/%20)] 
+* Introduction of my GSoC 2025 project, MDAnalysis, and ProLIF  [[GSoC 2025 - Week 0](https://yuyuan871111.github.io/blogs/gsoc/)]   
+* Protein helper function fixed your bond orders of residues (molecules) [[GSoC 2025 - Week 4](https://yuyuan871111.github.io/blogs/gsoc-week-4/)]  
+* Have a better design of protein helper function during code reviews [[GSoC 2025 - Week 6](https://yuyuan871111.github.io/blogs/gsoc-week-6/)]   
+* What is the implicit hydrogen? Why need an additional interaction class? [[GSoC 2025 - Week 8](https://yuyuan871111.github.io/blogs/gsoc-week-8/)]   
+* Validation and Optimization: tuning parameters for the implicit H-bond interaction method using datasets [[GSoC 2025 - Week 10](https://yuyuan871111.github.io/blogs/gsoc-week-10/)]   
+* Development Wrap-Up: PINDER validation and comprehensive documentation [[GSoC 2025 - Week 12](https://yuyuan871111.github.io/blogs/gsoc-week-12/)] 
 
 ## Future work
 
