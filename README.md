@@ -190,8 +190,8 @@ toc: true
 Your content in Markdown goes here.
 ```
 
-* Posts in `content/blogs/` automatically appear in the **Recent News** feed on the homepage and in the `/blogs` index.
-* `publication.md` and `honors.md` are automatically excluded from the news feed.
+* Regular posts in `content/blogs/` automatically appear in the **Recent News** feed on the homepage and in the `/blogs` index.
+* `publication.md` and `honors.md` have `build: { list: never }` in their frontmatter, keeping them accessible at their standalone URLs (`/blogs/publication` and `/blogs/honors`) while hiding them completely from the `/blogs` article list and pagination.
 
 ---
 
