@@ -1,16 +1,18 @@
 ---
-title: "Honors"
+title: "Honors & Awards"
 date: 2024-06-27T15:18:11Z
 draft: false
-# github_link: "https://github.com/gurusabarish/hugo-profile"
 author: "Yu-Yuan (Stuart) Yang"
 tags:
-  - honor
-  - achievement
-  - AI generated pictures
+  - honors
+  - awards
+  - fellowships
+layout: "honors"
 image: /images/blog_pics/achievement.png
-description: "Honors, Grants, Fellowships and Awards"
-toc: 
+description: "Grants, fellowships, competition prizes, and academic distinctions"
+toc: false
+build:
+  list: never
 ---
 
 ## Honors

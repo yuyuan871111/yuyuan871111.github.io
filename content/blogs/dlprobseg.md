@@ -6,7 +6,7 @@ draft: False
 author: "Yu-Yuan (Stuart) Yang"
 tags:
   - DLPROBSEG
-image: 
+image: /images/blog_pics/protein_ensemble.png
 description: ""
 toc: 
 ---

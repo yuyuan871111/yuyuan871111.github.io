@@ -1,0 +1,521 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Params.description | default "Full list of publications, presentations, and conference experiences." }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/single.css">
+<!-- fontawesome -->
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-6/all-6.4.2.js"></script>
+
+<style>
+/* Search & Filter bar styles */
+.pub-filter-pill {
+    cursor: pointer;
+    border: 1px solid var(--text-secondary-color);
+    background: transparent;
+    color: var(--text-secondary-color);
+    border-radius: 2rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+.pub-filter-pill:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.pub-filter-pill.active {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+.project-filter-pill {
+    cursor: pointer;
+    border: 1px solid var(--text-secondary-color);
+    background: transparent;
+    color: var(--text-secondary-color);
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+    transition: all 0.2s ease-in-out;
+}
+.project-filter-pill:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.project-filter-pill.active {
+    background-color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
+    color: var(--secondary-color) !important;
+}
+.record-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--secondary-color);
+}
+.record-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
+    border-color: var(--primary-color) !important;
+}
+.search-box-custom {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-secondary-color);
+    border-radius: 0.75rem;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+}
+.search-box-custom:focus {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+}
+</style>
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="py-5">
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <h1 class="display-6 fw-bold mb-3">{{ .Title }}</h1>
+            <p class="text-muted mx-auto" style="max-width: 700px;">
+                Comprehensive record of publications, oral talks, posters, and conference activities. Filter by category, search by topic, or browse by project tag.
+            </p>
+            <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                <a href="/blogs/honors" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                    <i class="fas fa-award me-1"></i> Honors & Awards
+                </a>
+                <a href="https://scholar.google.com/citations?user=_UlrhSsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                    <i class="fas fa-graduation-cap me-1"></i> Google Scholar
+                </a>
+                <a href="https://www.researchgate.net/profile/Yu-Yuan-Yang" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                    <i class="fab fa-researchgate me-1"></i> ResearchGate
+                </a>
+                <a href="https://orcid.org/0000-0003-3689-6964" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                    <i class="fab fa-orcid me-1"></i> ORCID
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-10 mx-auto">
+            <!-- Controls Box -->
+            <div class="card p-3 p-md-4 mb-4 border rounded-3 shadow-sm" style="background-color: var(--secondary-color);">
+                <!-- Search bar -->
+                <div class="position-relative mb-3">
+                    <i class="fas fa-search position-absolute top-50 translate-middle-y ms-3" style="color: var(--text-secondary-color);"></i>
+                    <input type="text" id="fullSearchInput" class="form-control search-box-custom w-100" placeholder="Search by paper title, authors, venue, keywords, or year...">
+                </div>
+
+                <!-- Category Filters -->
+                <div class="mb-3">
+                    <div class="small fw-semibold mb-2" style="color: var(--text-secondary-color);">Category:</div>
+                    <div class="d-flex flex-wrap gap-2" id="categoryFilterContainer">
+                        <button class="pub-filter-pill active" data-filter="all">All Records (<span id="count-all">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="publication">Publications (<span id="count-publication">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="oral">Oral Talks (<span id="count-oral">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="poster">Posters (<span id="count-poster">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="service">Service & Outreach (<span id="count-service">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="attendance">Attendance (<span id="count-attendance">0</span>)</button>
+                    </div>
+                </div>
+
+                <!-- Project Filters & Status Bar -->
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-2 border-top">
+                    <div class="d-flex flex-wrap align-items-center gap-1" id="projectFilterContainer">
+                        <span class="small me-1" style="color: var(--text-secondary-color);">Project:</span>
+                        <button class="project-filter-pill active" data-project="all">All</button>
+                        <button class="project-filter-pill" data-project="DLPROBSEG">#DLPROBSEG</button>
+                        <button class="project-filter-pill" data-project="FASTEVALP">#FASTEVALP</button>
+                        <button class="project-filter-pill" data-project="WPIFEMUSL">#WPIFEMUSL</button>
+                        <button class="project-filter-pill" data-project="COVIDVARI">#COVIDVARI</button>
+                        <button class="project-filter-pill" data-project="QUANTCADD">#QUANTCADD</button>
+                        <button class="project-filter-pill" data-project="SASDBQSAR">#SASDBQSAR</button>
+                        <button class="project-filter-pill" data-project="GSOC">#GSOC</button>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <small id="activeFilterStatus" class="fw-semibold text-muted"></small>
+                        <button id="resetFiltersBtn" class="btn btn-sm btn-link text-decoration-none p-0 d-none" style="color: var(--primary-color);">Clear filters</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Records List -->
+            <div id="recordsContainer" class="d-flex flex-column gap-3">
+                <!-- Publications -->
+                {{ range .Site.Params.achievements.publications }}
+                <div class="card record-card border shadow-sm p-3 p-md-4 rounded-3" 
+                     data-category="publication" 
+                     data-project="{{ .projectTag | default "" }}" 
+                     data-year="{{ .date }}"
+                     data-search="{{ printf "%s %s %s %s %s %s" .title .authors .venue .date (.type | default "") (.projectTag | default "") | lower }}">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                            <span class="badge border bg-transparent" style="color: var(--primary-color); border-color: var(--primary-color) !important;">{{ .type | default "Publication" }}</span>
+                            {{ if .projectTag }}
+                            <a href="{{ .projectUrl | default (printf "/tags/%s" (lower .projectTag)) }}" class="badge text-decoration-none border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">
+                                #{{ .projectTag }}
+                            </a>
+                            {{ end }}
+                        </div>
+                        <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">{{ .date }}</span>
+                    </div>
+                    <h5 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4;">
+                        {{ if .doiUrl }}
+                        <a href="{{ .doiUrl }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="color: var(--text-color);">
+                            {{ .title }}
+                        </a>
+                        {{ else }}
+                        <span style="color: var(--text-color);">{{ .title }}</span>
+                        {{ end }}
+                    </h5>
+                    <div class="small mb-2" style="color: var(--text-secondary-color);">
+                        {{ replace .authors "Yang, Y. Y." "<strong style='color: var(--text-color);'>Yang, Y. Y.</strong>" | safeHTML }}
+                    </div>
+                    <div class="small fst-italic mb-3" style="color: var(--text-secondary-color);">
+                        {{ .venue }}
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 mt-auto pt-1">
+                        {{ if .doiUrl }}
+                        <a href="{{ .doiUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary py-1 px-3">
+                            <i class="fas fa-external-link-alt me-1"></i> DOI: {{ .doi | default "View Paper" }}
+                        </a>
+                        {{ end }}
+                        {{ if .projectUrl }}
+                        <a href="{{ .projectUrl }}" class="btn btn-sm btn-outline-secondary py-1 px-3">
+                            <i class="fas fa-code-branch me-1"></i> Project Details
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+
+                <!-- Oral Presentations -->
+                {{ range .Site.Params.achievements.oralPresentations }}
+                <div class="card record-card border shadow-sm p-3 p-md-4 rounded-3" 
+                     data-category="oral" 
+                     data-project="{{ .projectTag | default "" }}" 
+                     data-year="{{ .date }}"
+                     data-search="{{ printf "%s %s %s %s %s %s" .title .authors .event .location .date (.projectTag | default "") | lower }}">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                            <span class="badge border bg-transparent" style="color: var(--primary-color); border-color: var(--primary-color) !important;">
+                                <i class="fas fa-microphone-alt me-1"></i>Oral Presentation
+                            </span>
+                            {{ if .projectTag }}
+                            <a href="{{ .projectUrl | default (printf "/tags/%s" (lower .projectTag)) }}" class="badge text-decoration-none border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">
+                                #{{ .projectTag }}
+                            </a>
+                            {{ end }}
+                        </div>
+                        <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">{{ .date }}</span>
+                    </div>
+                    <h5 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-color);">
+                        {{ .title }}
+                    </h5>
+                    <div class="small mb-2" style="color: var(--text-secondary-color);">
+                        {{ replace .authors "Yang, Y. Y." "<strong style='color: var(--text-color);'>Yang, Y. Y.</strong>" | safeHTML }}
+                    </div>
+                    <div class="small fst-italic mb-2" style="color: var(--text-secondary-color);">
+                        {{ .event }}{{ if .location }} &bull; {{ .location }}{{ end }}
+                    </div>
+                    {{ if or .eventUrl .projectUrl }}
+                    <div class="d-flex flex-wrap gap-2 mt-auto pt-1">
+                        {{ if .eventUrl }}
+                        <a href="{{ .eventUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary py-1 px-3">
+                            <i class="fas fa-external-link-alt me-1"></i> Presentation Link
+                        </a>
+                        {{ end }}
+                        {{ if .projectUrl }}
+                        <a href="{{ .projectUrl }}" class="btn btn-sm btn-outline-secondary py-1 px-3">
+                            <i class="fas fa-code-branch me-1"></i> Project Details
+                        </a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+
+                <!-- Poster Presentations -->
+                {{ range .Site.Params.achievements.posterPresentations }}
+                <div class="card record-card border shadow-sm p-3 p-md-4 rounded-3" 
+                     data-category="poster" 
+                     data-project="{{ .projectTag | default "" }}" 
+                     data-year="{{ .date }}"
+                     data-search="{{ printf "%s %s %s %s %s %s" .title .authors .event .location .date (.projectTag | default "") | lower }}">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                            <span class="badge border bg-transparent" style="color: var(--primary-color); border-color: var(--primary-color) !important;">
+                                <i class="fas fa-image me-1"></i>{{ .type | default "Poster" }}
+                            </span>
+                            {{ if .projectTag }}
+                            <a href="{{ .projectUrl | default (printf "/tags/%s" (lower .projectTag)) }}" class="badge text-decoration-none border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">
+                                #{{ .projectTag }}
+                            </a>
+                            {{ end }}
+                        </div>
+                        <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">{{ .date }}</span>
+                    </div>
+                    <h5 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-color);">
+                        {{ .title }}
+                    </h5>
+                    <div class="small mb-2" style="color: var(--text-secondary-color);">
+                        {{ replace .authors "Yang, Y. Y." "<strong style='color: var(--text-color);'>Yang, Y. Y.</strong>" | safeHTML }}
+                    </div>
+                    <div class="small fst-italic mb-2" style="color: var(--text-secondary-color);">
+                        {{ .event }}{{ if .location }} &bull; {{ .location }}{{ end }}
+                    </div>
+                    {{ if or .eventUrl .projectUrl }}
+                    <div class="d-flex flex-wrap gap-2 mt-auto pt-1">
+                        {{ if .eventUrl }}
+                        <a href="{{ .eventUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary py-1 px-3">
+                            <i class="fas fa-external-link-alt me-1"></i> Poster Link
+                        </a>
+                        {{ end }}
+                        {{ if .projectUrl }}
+                        <a href="{{ .projectUrl }}" class="btn btn-sm btn-outline-secondary py-1 px-3">
+                            <i class="fas fa-code-branch me-1"></i> Project Details
+                        </a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+
+                <!-- Service & Outreach -->
+                {{ range .Site.Params.achievements.service }}
+                <div class="card record-card border shadow-sm p-3 p-md-4 rounded-3" 
+                     data-category="service" 
+                     data-project="{{ if in .url "gsoc" }}GSOC{{ else }}{{ end }}" 
+                     data-year="{{ .date }}"
+                     data-search="{{ printf "%s %s %s %s %s" .title .organization .location .date (.content | default "") | lower }}">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                            <span class="badge border bg-transparent" style="color: var(--primary-color); border-color: var(--primary-color) !important;">
+                                <i class="fas fa-hand-holding-heart me-1"></i>{{ .type }}
+                            </span>
+                            {{ if .role }}
+                            <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">
+                                {{ .role }}
+                            </span>
+                            {{ end }}
+                        </div>
+                        <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">{{ .date }}</span>
+                    </div>
+                    <h5 class="fw-bold mb-1" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-color);">
+                        {{ .title }}
+                    </h5>
+                    {{ if .organization }}
+                    <div class="small fw-semibold mb-2" style="color: var(--primary-color);">
+                        {{ .organization }}{{ if .location }} &bull; <span class="fw-normal" style="color: var(--text-secondary-color);">{{ .location }}</span>{{ end }}
+                    </div>
+                    {{ end }}
+                    {{ if .content }}
+                    <div class="small mb-2" style="color: var(--text-secondary-color);">
+                        {{ .content | markdownify }}
+                    </div>
+                    {{ end }}
+                    {{ if .url }}
+                    <div class="d-flex flex-wrap gap-2 mt-auto pt-1">
+                        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary py-1 px-3">
+                            <i class="fas fa-external-link-alt me-1"></i> Details
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+
+                <!-- Attendance Only -->
+                {{ range .Site.Params.achievements.attendanceOnly }}
+                <div class="card record-card border shadow-sm p-3 p-md-4 rounded-3" 
+                     data-category="attendance" 
+                     data-project="" 
+                     data-year="{{ .date }}"
+                     data-search="{{ printf "%s %s %s %s" .title .event .location .date | lower }}">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                        <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">
+                            <i class="fas fa-calendar-check me-1"></i>Attendance
+                        </span>
+                        <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">{{ .date }}</span>
+                    </div>
+                    <h5 class="fw-bold mb-1" style="font-size: 1.05rem; line-height: 1.4; color: var(--text-color);">
+                        {{ .title }}
+                    </h5>
+                    <div class="small fst-italic mb-2" style="color: var(--text-secondary-color);">
+                        {{ .event }}{{ if .location }} &bull; {{ .location }}{{ end }}
+                    </div>
+                    {{ if .url }}
+                    <div class="d-flex flex-wrap gap-2 mt-auto pt-1">
+                        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary py-1 px-3">
+                            <i class="fas fa-external-link-alt me-1"></i> Event Link
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+
+            <!-- No results placeholder -->
+            <div id="noResultsMsg" class="card border text-center p-5 mt-3 d-none rounded-3" style="background-color: var(--secondary-color);">
+                <i class="fas fa-search fa-2x mb-3 text-muted"></i>
+                <h5 class="fw-bold">No matching records found</h5>
+                <p class="text-muted small">Try adjusting your search query, selecting another category, or resetting filters.</p>
+                <div>
+                    <button id="resetAllBtn" class="btn btn-sm btn-primary px-3">Reset all filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client-side Search and Filter Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("fullSearchInput");
+    const categoryBtns = document.querySelectorAll("#categoryFilterContainer .pub-filter-pill");
+    const projectBtns = document.querySelectorAll("#projectFilterContainer .project-filter-pill");
+    const statusText = document.getElementById("activeFilterStatus");
+    const resetBtn = document.getElementById("resetFiltersBtn");
+    const resetAllBtn = document.getElementById("resetAllBtn");
+    const noResultsMsg = document.getElementById("noResultsMsg");
+    const records = Array.from(document.querySelectorAll("#recordsContainer .record-card"));
+
+    let activeCategory = "all";
+    let activeProject = "all";
+    let searchQuery = "";
+
+    // Calculate initial category counts
+    const counts = {
+        all: records.length,
+        publication: records.filter(r => r.dataset.category === "publication").length,
+        oral: records.filter(r => r.dataset.category === "oral").length,
+        poster: records.filter(r => r.dataset.category === "poster").length,
+        service: records.filter(r => r.dataset.category === "service").length,
+        attendance: records.filter(r => r.dataset.category === "attendance").length
+    };
+    for (const [cat, cnt] of Object.entries(counts)) {
+        const el = document.getElementById("count-" + cat);
+        if (el) el.textContent = cnt;
+    }
+
+    function applyFilters() {
+        let visibleCount = 0;
+        const q = searchQuery.toLowerCase().trim();
+
+        records.forEach(card => {
+            const cardCat = (card.dataset.category || "").toLowerCase();
+            const cardProj = (card.dataset.project || "").toUpperCase();
+            const cardSearch = card.dataset.search || "";
+
+            const matchesCategory = (activeCategory === "all") || (cardCat === activeCategory);
+            const matchesProject = (activeProject === "all" || activeProject === "ALL" || !activeProject) || (cardProj.includes(activeProject));
+            const matchesSearch = !q || cardSearch.includes(q);
+
+            if (matchesCategory && matchesProject && matchesSearch) {
+                card.classList.remove("d-none");
+                visibleCount++;
+            } else {
+                card.classList.add("d-none");
+            }
+        });
+
+        // Update status text & counter
+        if (statusText) {
+            statusText.textContent = `Showing ${visibleCount} of ${records.length} records`;
+        }
+        
+        // Show/hide no results message
+        if (noResultsMsg) {
+            if (visibleCount === 0) {
+                noResultsMsg.classList.remove("d-none");
+            } else {
+                noResultsMsg.classList.add("d-none");
+            }
+        }
+
+        // Show/hide clear filters button
+        const isFiltered = (activeCategory !== "all" || (activeProject !== "all" && activeProject !== "ALL") || q.length > 0);
+        if (resetBtn) {
+            if (isFiltered) {
+                resetBtn.classList.remove("d-none");
+            } else {
+                resetBtn.classList.add("d-none");
+            }
+        }
+    }
+
+    // Category button clicks
+    categoryBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            categoryBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            activeCategory = (btn.dataset.filter || "all").toLowerCase();
+            applyFilters();
+        });
+    });
+
+    // Project button clicks
+    projectBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            projectBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            const p = (btn.dataset.project || "").trim();
+            activeProject = (p.toLowerCase() === "all" || !p) ? "all" : p.toUpperCase();
+            applyFilters();
+        });
+    });
+
+    // Search input
+    if (searchInput) {
+        searchInput.addEventListener("input", function() {
+            searchQuery = this.value;
+            applyFilters();
+        });
+    }
+
+    function resetAll() {
+        activeCategory = "all";
+        activeProject = "all";
+        searchQuery = "";
+        if (searchInput) searchInput.value = "";
+        categoryBtns.forEach(b => b.classList.toggle("active", (b.dataset.filter || "").toLowerCase() === "all"));
+        projectBtns.forEach(b => b.classList.toggle("active", (b.dataset.project || "").toLowerCase() === "all"));
+        if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        applyFilters();
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            resetAll();
+        });
+    }
+    if (resetAllBtn) {
+        resetAllBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            resetAll();
+        });
+    }
+
+    // Check URL parameters for category or project preset
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get('category');
+    if (catParam && ['publication', 'oral', 'poster', 'service', 'attendance'].includes(catParam.toLowerCase())) {
+        activeCategory = catParam.toLowerCase();
+        categoryBtns.forEach(b => b.classList.toggle("active", (b.dataset.filter || "").toLowerCase() === activeCategory));
+    }
+    const projParam = urlParams.get('project');
+    if (projParam) {
+        const p = projParam.trim();
+        activeProject = (p.toLowerCase() === "all" || !p) ? "all" : p.toUpperCase();
+        projectBtns.forEach(b => b.classList.toggle("active", (b.dataset.project || "").toUpperCase() === activeProject));
+    }
+
+    // Initial run
+    applyFilters();
+});
+</script>
+{{ end }}

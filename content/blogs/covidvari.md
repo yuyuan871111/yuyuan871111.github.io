@@ -9,7 +9,7 @@ tags:
   - molecular dynamics
   - GROMACS
   - structural biology
-image: /images/blog_pics/cute_sarscov2.png
+image: /images/blog_pics/sarscov2_study.jpeg
 description: ""
 toc: 
 ---
@@ -17,8 +17,6 @@ toc:
 Why did omicron spread so much faster than earlier SARS-CoV-2 variants? We looked at this at the molecular level: where the spike protein's receptor-binding domain meets the human ACE2 receptor.
 
 We built models of 14 variants (alpha to omicron BA.5) from PDB structures and ran 100 ns MD simulations of each complex. The omicron complexes were more compact and formed more hydrogen bonds across the interface. Those bonds also broke and re-formed faster. PHE486 and TYR501 stood out as key residues. These features fit with omicron's higher transmissibility.
-
-*Cover image generated with Stable Diffusion XL 1.0.*
 
 
 ## Know more from reference...

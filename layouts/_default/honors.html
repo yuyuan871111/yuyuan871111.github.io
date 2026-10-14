@@ -1,0 +1,297 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Params.description | default "Honors, grants, fellowships, competition awards, and academic distinctions." }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/single.css">
+<!-- fontawesome -->
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-6/all-6.4.2.js"></script>
+
+<style>
+/* Search & Filter bar styles */
+.pub-filter-pill {
+    cursor: pointer;
+    border: 1px solid var(--text-secondary-color);
+    background: transparent;
+    color: var(--text-secondary-color);
+    border-radius: 2rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+.pub-filter-pill:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.pub-filter-pill.active {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+.record-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    background-color: var(--secondary-color);
+}
+.record-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
+    border-color: var(--primary-color) !important;
+}
+.search-box-custom {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-secondary-color);
+    border-radius: 0.75rem;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+}
+.search-box-custom:focus {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+}
+</style>
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="py-5">
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <h1 class="display-6 fw-bold mb-3 d-flex align-items-center justify-content-center gap-2">
+                <i class="fas fa-award text-warning"></i>
+                <span>{{ .Title }}</span>
+            </h1>
+            <p class="text-muted mx-auto" style="max-width: 700px;">
+                Fellowships, research grants, competition prizes, and academic distinctions earned throughout academic research and education.
+            </p>
+            <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                <a href="/blogs/publication" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                    <i class="fas fa-file-alt me-1"></i> Publications & Conferences
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-10 mx-auto">
+            <!-- Controls Box -->
+            <div class="card p-3 p-md-4 mb-4 border rounded-3 shadow-sm" style="background-color: var(--secondary-color);">
+                <!-- Search bar -->
+                <div class="position-relative mb-3">
+                    <i class="fas fa-search position-absolute top-50 translate-middle-y ms-3" style="color: var(--text-secondary-color);"></i>
+                    <input type="text" id="fullSearchInput" class="form-control search-box-custom w-100" placeholder="Search by award title, organization, grant type, or year...">
+                </div>
+
+                <!-- Category Filters -->
+                <div class="mb-3">
+                    <div class="small fw-semibold mb-2" style="color: var(--text-secondary-color);">Category:</div>
+                    <div class="d-flex flex-wrap gap-2" id="categoryFilterContainer">
+                        <button class="pub-filter-pill active" data-filter="all">All Honors (<span id="count-all">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="grant">Grants & Fellowships (<span id="count-grant">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="award">Awards & Thesis (<span id="count-award">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="competition">Competitions & Hackathons (<span id="count-competition">0</span>)</button>
+                        <button class="pub-filter-pill" data-filter="distinction">Academic Distinctions (<span id="count-distinction">0</span>)</button>
+                    </div>
+                </div>
+
+                <!-- Status Bar -->
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-2 border-top">
+                    <small id="activeFilterStatus" class="fw-semibold text-muted"></small>
+                    <button id="resetFiltersBtn" class="btn btn-sm btn-link text-decoration-none p-0 d-none" style="color: var(--primary-color);">Clear filters</button>
+                </div>
+            </div>
+
+            <!-- Honors Records List -->
+            <div id="recordsContainer" class="d-flex flex-column gap-3">
+                {{ range .Site.Params.achievements.honors }}
+                <div class="card record-card border shadow-sm p-3 p-md-4 rounded-3" 
+                     data-category="{{ .category | default "award" }}" 
+                     data-year="{{ .year | default "" }}"
+                     data-search="{{ printf "%s %s %s %s %s %s" .title .organization (.program | default "") .date (.badge | default "") (.content | default "") | lower }}">
+                    
+                    <!-- Header Meta -->
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                            <span class="badge border bg-transparent" style="color: var(--primary-color); border-color: var(--primary-color) !important;">
+                                <i class="{{ .icon | default "fas fa-award" }} me-1"></i>{{ .categoryLabel | default "Honors" }}
+                            </span>
+                            {{ if .badge }}
+                            <span class="badge border bg-transparent" style="color: #d63384; border-color: #d63384 !important;">
+                                {{ .badge }}
+                            </span>
+                            {{ end }}
+                        </div>
+                        <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important;">{{ .date }}</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h5 class="fw-bold mb-1" style="font-size: 1.15rem; line-height: 1.4; color: var(--text-color);">
+                        {{ .title }}
+                    </h5>
+
+                    <!-- Organization & Program -->
+                    <div class="small fw-semibold mb-2" style="color: var(--primary-color);">
+                        {{ .organization }}
+                        {{ if .program }} &bull; <span class="fw-normal" style="color: var(--text-secondary-color);">{{ .program }}</span>{{ end }}
+                        {{ if .location }} &bull; <span class="fw-normal" style="color: var(--text-secondary-color);">{{ .location }}</span>{{ end }}
+                    </div>
+
+                    <!-- Summary Content -->
+                    {{ if .content }}
+                    <div class="small mb-2" style="color: var(--text-secondary-color); line-height: 1.55;">
+                        {{ .content | markdownify }}
+                    </div>
+                    {{ end }}
+
+                    <!-- Action Link -->
+                    {{ if .url }}
+                    <div class="d-flex flex-wrap gap-2 mt-auto pt-2">
+                        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary py-1 px-3">
+                            <i class="fas fa-external-link-alt me-1"></i> {{ .urlText | default "Details" }}
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+
+            <!-- No results placeholder -->
+            <div id="noResultsMsg" class="card border text-center p-5 mt-3 d-none rounded-3" style="background-color: var(--secondary-color);">
+                <i class="fas fa-search fa-2x mb-3 text-muted"></i>
+                <h5 class="fw-bold">No matching honors found</h5>
+                <p class="text-muted small">Try adjusting your search query, selecting another category, or resetting filters.</p>
+                <div>
+                    <button id="resetAllBtn" class="btn btn-sm btn-primary px-3">Reset all filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client-side Search and Filter Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("fullSearchInput");
+    const categoryBtns = document.querySelectorAll("#categoryFilterContainer .pub-filter-pill");
+    const statusText = document.getElementById("activeFilterStatus");
+    const resetBtn = document.getElementById("resetFiltersBtn");
+    const resetAllBtn = document.getElementById("resetAllBtn");
+    const noResultsMsg = document.getElementById("noResultsMsg");
+    const records = Array.from(document.querySelectorAll("#recordsContainer .record-card"));
+
+    let activeCategory = "all";
+    let searchQuery = "";
+
+    // Calculate category counts
+    const counts = {
+        all: records.length,
+        grant: records.filter(r => r.dataset.category === "grant").length,
+        award: records.filter(r => r.dataset.category === "award").length,
+        competition: records.filter(r => r.dataset.category === "competition").length,
+        distinction: records.filter(r => r.dataset.category === "distinction").length
+    };
+    for (const [cat, cnt] of Object.entries(counts)) {
+        const el = document.getElementById("count-" + cat);
+        if (el) el.textContent = cnt;
+    }
+
+    function applyFilters() {
+        let visibleCount = 0;
+        const q = searchQuery.toLowerCase().trim();
+
+        records.forEach(card => {
+            const cardCat = (card.dataset.category || "").toLowerCase();
+            const cardSearch = card.dataset.search || "";
+
+            const matchesCategory = (activeCategory === "all") || (cardCat === activeCategory);
+            const matchesSearch = !q || cardSearch.includes(q);
+
+            if (matchesCategory && matchesSearch) {
+                card.classList.remove("d-none");
+                visibleCount++;
+            } else {
+                card.classList.add("d-none");
+            }
+        });
+
+        // Update status text & counter
+        if (statusText) {
+            statusText.textContent = `Showing ${visibleCount} of ${records.length} honors`;
+        }
+        
+        // Show/hide no results message
+        if (noResultsMsg) {
+            if (visibleCount === 0) {
+                noResultsMsg.classList.remove("d-none");
+            } else {
+                noResultsMsg.classList.add("d-none");
+            }
+        }
+
+        // Show/hide clear filters button
+        const isFiltered = (activeCategory !== "all" || q.length > 0);
+        if (resetBtn) {
+            if (isFiltered) {
+                resetBtn.classList.remove("d-none");
+            } else {
+                resetBtn.classList.add("d-none");
+            }
+        }
+    }
+
+    // Category button clicks
+    categoryBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            categoryBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            activeCategory = (btn.dataset.filter || "all").toLowerCase();
+            applyFilters();
+        });
+    });
+
+    // Search input
+    if (searchInput) {
+        searchInput.addEventListener("input", function() {
+            searchQuery = this.value;
+            applyFilters();
+        });
+    }
+
+    function resetAll() {
+        activeCategory = "all";
+        searchQuery = "";
+        if (searchInput) searchInput.value = "";
+        categoryBtns.forEach(b => b.classList.toggle("active", (b.dataset.filter || "").toLowerCase() === "all"));
+        if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        applyFilters();
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            resetAll();
+        });
+    }
+    if (resetAllBtn) {
+        resetAllBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            resetAll();
+        });
+    }
+
+    // Check URL parameters for category preset
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get('category');
+    if (catParam && ['grant', 'award', 'competition', 'distinction'].includes(catParam.toLowerCase())) {
+        activeCategory = catParam.toLowerCase();
+        categoryBtns.forEach(b => b.classList.toggle("active", (b.dataset.filter || "").toLowerCase() === activeCategory));
+    }
+
+    // Initial run
+    applyFilters();
+});
+</script>
+{{ end }}

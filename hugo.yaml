@@ -118,8 +118,8 @@ params:
       disableExperience: false
       disableEducation: false
       disableProjects: false
-      disableAchievements: false
-      disableContact: false
+      disableAchievements: true
+      disableContact: true
 
   # Hero
   hero:
@@ -146,6 +146,8 @@ params:
           url: https://www.linkedin.com/in/yuyuan871111/
         - icon: fab fa-researchgate
           url: https://www.researchgate.net/profile/Yu-Yuan-Yang
+        - icon: fab fa-orcid
+          url: https://orcid.org/0000-0003-3689-6964
       customIcons:
         - icon: /icons/google-scholar.png
           url: https://scholar.google.com/citations?user=_UlrhSsAAAAJ&hl=en
@@ -264,12 +266,46 @@ params:
         #   name: "My academic record"
         #   url: "https://example.com"
 
-  # projects
+  # projects & publications
   projects:
     enable: true
-    # title: "Custom Name"
+    title: "Projects & Publications"
     items:
+      - title: "Deep learning for binding site segmentation"
+        projectTag: "DLPROBSEG"
+        badges:
+          - "PyTorch"
+          - "Molecular dynamics"
+          - "Segmentation"
+        content: |-
+          A computer vision-based deep learning model that scans putative protein binding sites in molecular dynamics (MD) ensembles to identify conformations compatible with fragment and ligand binding. Stuart's PhD research at QMUL AIDD.
+        image: /images/blog_pics/protein_ensemble.png
+        links: 
+        - icon: fa-solid fa-blog
+          url: /tags/dlprobseg
+        - icon: fab fa-github
+          url: https://github.com/yuyuan871111/ProBiSEnSe_pymol_plugin
+
+      - title: "FastEval Parkinsonism"
+        projectTag: "FASTEVALP"
+        badges:
+          - "PyTorch"
+          - "Computer vision"
+          - "Ruby on Rails"
+        content: |-
+          An instant deep learning-assisted online evaluation system for Parkinsonian motor symptoms from home finger-tapping hand videos. Published in npj Digital Medicine (2024).
+        image: /images/blog_pics/fastevalp.png
+        links: 
+        - icon: fa-solid fa-blog
+          url: /tags/fastevalp
+        - icon: fab fa-github
+          url: https://github.com/yuyuan871111/fast_eval_Parkinsonism
+        featured:
+          name: "Live Web Service"
+          link: "https://fastevalp.cmdm.tw/"
+
       - title: "GSoC 2025: implicit H-bonds in ProLIF"
+        projectTag: "GSOCMDAPL"
         badges:
           - "ProLIF"
           - "MDAnalysis"
@@ -282,58 +318,28 @@ params:
           url: /tags/gsocmdapl
         - icon: fab fa-github
           url: https://github.com/yuyuan871111/GSoC2025_Hbond_PM
-      
-      - title: Deep learning for binding site segmentation
-        badges:
-          - "PyTorch"
-          - "Molecular dynamics"
-          - "Segmentation"
-        content: |-
-          A model that scans a protein's binding site and finds the conformations from MD simulations that look most ready to bind a ligand. My PhD project.
-        image: /images/blog_pics/protein_ensemble.png
-        links: 
-        - icon: fa-solid fa-blog
-          url: /tags/dlprobseg
-        - icon: fab fa-github
-          url: https://github.com/yuyuan871111/ProBiSEnSe_pymol_plugin
-      - title: FastEval Parkinsonism
-        badges:
-          - "PyTorch"
-          - "Computer vision"
-          - "Ruby on Rails"
-        content: |-
-          A web tool that rates Parkinsonian finger-tapping from a home video. Published in npj Digital Medicine (2024).
-        image: /images/blog_pics/fastevalp.png
-        links: 
-        - icon: fa-solid fa-blog
-          url: /tags/fastevalp
-        - icon: fab fa-github
-          url: https://github.com/yuyuan871111/fast_eval_Parkinsonism
-        featured:
-          name: "Web services"
-          link: "https://fastevalp.cmdm.tw/"
-      
-      - title: Whey Protein Fibril Microcapsules
+
+      - title: "Whey Protein Fibril Microcapsules"
+        projectTag: "WPIFEMUSL"
         badges:
           - "Spectroscopy"
           - "Emulsions"
+          - "Biomaterials"
         content: |-
-          Bilayer microcapsules of whey protein fibrils and polysaccharides that keep β-carotene stable in acidic conditions.
-        image: /images/blog_pics/whey_protein_scoop.jpg
+          Bilayer microcapsules of whey protein isolate fibrils (WPFs) and pectin engineered to protect acid-sensitive lipophilic nutrients like β-carotene and preserve antioxidant bioavailability. Published in JTICE (2024).
+        image: /images/blog_pics/whey_protein_study.jpg
         links: 
         - icon: fa-solid fa-blog
           url: /tags/wpifemusl
-      
-      - title: SARS-CoV-2 omicron variants
-        content: |-
-          MD simulations of the spike–ACE2 interface: omicron variants form more compact complexes with more hydrogen bonds than earlier variants.
-        image: /images/blog_pics/cute_sarscov2.png
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
+
+      - title: "SARS-CoV-2 omicron variants"
+        projectTag: "COVIDVARI"
         badges:
           - "GROMACS"
           - "Protein-Protein Interaction"
+        content: |-
+          MD simulations of the spike–ACE2 interface: omicron variants form more compact complexes with more hydrogen bonds than earlier variants. Published in Briefings in Functional Genomics (2023).
+        image: /images/blog_pics/sarscov2_study.jpeg
         links:
           - icon: fa fa-blog
             url: /tags/covidvari
@@ -365,56 +371,434 @@ params:
       #     - icon: fab fa-github
       #       url: https://github.com/gurusabarish/HugoProfileV2
 
-  # Achievements
+  # Publications, Presentations & Activities (replaces Achievements)
   achievements:
     enable: true
-    # title: "Custom Name"
-    items:
-      - title: "Publication & conference"
-        content: "See my full publication list and conference attendance."
-        url: "/blogs/publication"
-        image: /images/blog_pics/publication_abstract.png
-      - title: Honors
-        content: "See my honors and awards."
-        url: "/blogs/honors"
-        image: /images/blog_pics/achievement.png
-      # - title: Facebook Hackathon Winner
-      #   content: Developed a product using Artificial Intelligence.
-      #   image: /images/achievment.jpg
-      # - title: Hugo Profile
-      #   content: Developed a theme and getting 1K+ downloads per month.
-      #   url: "https://github.com/gurusabarish/hugo-profile"
-      #   image: /images/achievment.jpg
-      # - title: Microsoft Imagine Runner
-      #   content: We are developed a product which can help others.
-      # - title: Google Summer of Code
-      #   content: Contributed to a open source project.
-      #   url: https://example.com
+    title: "Publications & Activities"
+    fullListUrl: "/blogs/publication"
+    publications:
+      - title: "Learning Fragment-Based Segmentation of Binding Sites from Molecular Dynamics: A Proof of Concept on Cardiac Myosin"
+        authors: "Yang, Y. Y., Pickersgill, R. W., and Fornili, A."
+        venue: "Journal of Chemical Information and Modeling (JCIM)"
+        date: "2026"
+        type: "Research / Method"
+        highlight: true
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+        doi: "10.1021/acs.jcim.6c00549"
+        doiUrl: "https://doi.org/10.1021/acs.jcim.6c00549"
+
+      - title: "Architecture of the type II secretion system"
+        authors: "Tayebinia, M., Ghanem, N., Zhang, H., Yang, Y. Y., Fornili, A., Shevchik, V., Darbari, V., and Pickersgill, R."
+        venue: "bioRxiv (Preprint)"
+        date: "2026"
+        type: "Preprint"
+        highlight: true
+        doi: "10.64898/2026.05.07.723501"
+        doiUrl: "https://doi.org/10.64898/2026.05.07.723501"
+
+      - title: "FastEval Parkinsonism: an instant deep learning–assisted video-based online system for Parkinsonian motor symptom evaluation"
+        authors: "Yang, Y. Y., Ho, M. Y., Tai, C. H., Wu, R. M., Kuo, M. C., and Tseng, Y. J."
+        venue: "NPJ Digital Medicine"
+        date: "Feb 2024"
+        type: "Research / Tool"
+        highlight: true
+        projectTag: "FASTEVALP"
+        projectUrl: "/tags/fastevalp"
+        doi: "10.1038/s41746-024-01022-x"
+        doiUrl: "https://doi.org/10.1038/s41746-024-01022-x"
+
+      - title: "Encapsulation with a complex of acidic/alkaline polysaccharide-whey protein isolate fibril bilayer microcapsules enhances the stability of β-carotene under acidic environments"
+        authors: "Yang, Y. Y., Lai, Y. R., How, S. C., Lin, T. H., and Wang, S. S. S."
+        venue: "Journal of the Taiwan Institute of Chemical Engineers"
+        date: "Jan 2024"
+        type: "Research"
+        projectTag: "WPIFEMUSL"
+        projectUrl: "/tags/wpifemusl"
+        doi: "10.1016/j.jtice.2024.105344"
+        doiUrl: "https://doi.org/10.1016/j.jtice.2024.105344"
+
+      - title: "FastEval Parkinsonism: an instant deep learning-based online self-evaluation system for the diagnosis of Parkinson's symptoms with hand videos using finger tapping"
+        authors: "Yang, Y. Y."
+        venue: "NTU BEBI (Best Master Thesis Award 2023)"
+        date: "Apr 2023"
+        type: "Master's Thesis"
+        projectTag: "FASTEVALP"
+        projectUrl: "/tags/fastevalp"
+        doi: "10.6342/NTU202300716"
+        doiUrl: "https://doi.org/10.6342/NTU202300716"
+
+      - title: "The evolution of SARS-CoV-2 Omicron Variants on the spike-protein and hACE2 interface – determined by the hydrogen bonding formations"
+        authors: "Yang, Y. Y. and Tseng, Y. J."
+        venue: "Briefings in Functional Genomics"
+        date: "May 2023"
+        type: "Research"
+        projectTag: "COVIDVARI"
+        projectUrl: "/tags/covidvari"
+        doi: "10.1093/bfgp/elac053"
+        doiUrl: "https://doi.org/10.1093/bfgp/elac053"
+
+      - title: "Recent advances in quantum computing for drug discovery and development"
+        authors: "Wang, P. H., Chen J. H., Yang, Y. Y., Lee, C., and Tseng, Y. J."
+        venue: "IEEE Nanotechnology Magazine"
+        date: "Mar 2023"
+        type: "Review"
+        projectTag: "QUANTCADD"
+        projectUrl: "/tags/quantcadd"
+        doi: "10.1109/MNANO.2023.3249499"
+        doiUrl: "https://doi.org/10.1109/MNANO.2023.3249499"
+
+    oralPresentations:
+      - title: "Holo-like conformation selection using a computer vision-based deep-learning model"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "UKRI/BBSRC AI for Drug Discovery Summer Symposium 2025"
+        location: "London, UK"
+        date: "Jun 2025"
+        type: "Oral"
+        highlight: true
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "Deep learning for binding site segmentation in protein ensembles"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "Evotec PhD Day 2024"
+        location: "Virtual / Evotec"
+        date: "Oct 2024"
+        type: "Oral"
+        highlight: true
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "Competitive analysis of different SARS-CoV-2 variants in United Kingdom, Israel, South Africa, Brazil and Peru"
+        authors: "Yang, Y. Y. and Tseng, Y. J."
+        event: "American Chemical Society (ACS) Spring 2022"
+        location: "Virtual"
+        date: "Mar 2022"
+        type: "Oral"
+        highlight: true
+        projectTag: "COVIDVARI"
+        projectUrl: "/tags/covidvari"
+        eventUrl: "https://www.morressier.com/o/event/623377e0b300ee00119b311f/article/6234a182818a915252b7f606"
+
+    posterPresentations:
+      - title: "Holo-like conformation selection using a computer vision-based deep-learning model"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "QMUL SBBS Postgraduate Research Symposium 2025"
+        location: "London, UK"
+        date: "Jun 2025"
+        type: "Poster"
+        highlight: true
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "Holo-like conformation selection using a computer vision-based deep-learning model"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "Thomas Young Centre (TYC) Postgraduate Student Day 2025"
+        location: "London, UK"
+        date: "Jun 2025"
+        type: "Poster"
+        highlight: true
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "Deep learning for binding site segmentation in protein ensembles"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "MDAnalysis UGM 2024"
+        location: "London, UK"
+        date: "Aug 2024"
+        type: "Poster / Lightning Talk"
+        highlight: true
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "Deep learning for binding site segmentation in protein ensembles"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "CCP5 Summer School 2024"
+        location: "Newcastle, UK"
+        date: "Jul 2024"
+        type: "Poster"
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "Graph Linkage and Database Cross-Reference in Assay Cascade Analysis for Acute Myeloid Leukemia (AML)"
+        authors: "Yang, Y. Y., Ismail, N. M., Siu, P. C., Occhetta, M., Mellor, C., Dai, W., Finke, B., Bessant, C., Walker, A., and Crowther, D."
+        event: "UKRI/BBSRC AI for Drug Discovery Summer Symposium 2024"
+        location: "London, UK"
+        date: "Jun 2024"
+        type: "Poster"
+
+      - title: "Deep learning for binding site segmentation in protein ensembles"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "UKRI/BBSRC AI for Drug Discovery Summer Symposium 2024"
+        location: "London, UK"
+        date: "Jun 2024"
+        type: "Poster"
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "Deep learning for binding site segmentation in protein ensembles"
+        authors: "Yang, Y. Y., Pickersgill, R. W., Fornili, A."
+        event: "Thomas Young Centre (TYC) Postgraduate Student Day 2024"
+        location: "London, UK"
+        date: "May 2024"
+        type: "Poster"
+        projectTag: "DLPROBSEG"
+        projectUrl: "/tags/dlprobseg"
+
+      - title: "QSAR model of carcinogenicity based on data from GreenScreen hazard assessment"
+        authors: "Wang, P. H., Yang, Y. Y., and Tseng, Y. J."
+        event: "American Chemical Society (ACS) Fall 2022"
+        location: "Virtual"
+        date: "Aug 2022"
+        type: "Poster"
+        projectTag: "SASDBQSAR"
+        projectUrl: "/tags/sasdbqsar"
+        eventUrl: "https://acs.digitellinc.com/p/s/qsar-model-of-carcinogenicity-based-on-data-from-greenscreen-hazard-assessment-524763"
+
+      - title: "Current trends in safer alternatives and risk assessment"
+        authors: "Wang, Y. K., Yang, Y. Y., Chang, C. Y., and Tseng, Y. J."
+        event: "American Chemical Society (ACS) Fall 2022"
+        location: "Virtual"
+        date: "Aug 2022"
+        type: "Poster"
+        projectTag: "SASDBQSAR"
+        projectUrl: "/tags/sasdbqsar"
+        eventUrl: "https://acs.digitellinc.com/p/s/current-trends-in-safer-alternatives-and-risk-assessment-524775"
+
+      - title: "Benchmark dataset for hazardous substances for safer alternative chemicals"
+        authors: "Kuo, T. C., Wang, P. H., Wang, Y. K., Yang, Y. Y., Yao, P. Y., Jhong, Y. C., Chang, C. Y., Lee, C. Y., and Tseng, Y. J."
+        event: "American Chemical Society (ACS) Fall 2022"
+        location: "Virtual"
+        date: "Aug 2022"
+        type: "Poster"
+        projectTag: "SASDBQSAR"
+        projectUrl: "/tags/sasdbqsar"
+        eventUrl: "https://acs.digitellinc.com/p/s/benchmark-dataset-for-hazardous-substances-for-safer-alternative-chemicals-524771"
+
+    service:
+      - title: "Conference Organizing Committee"
+        organization: "London Biomedical Taiwanese Society (LTBS)"
+        role: "Organizer"
+        date: "2024"
+        location: "London, UK"
+        type: "Conference Organization"
+        highlight: true
+        content: "Organized the 18th Interdisciplinary Biomedical Sciences Conference (iBS18) in London, facilitating scientific exchange and community building for biomedical researchers."
+        url: "https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6"
+
+      - title: "Laboratory Demonstrator & STEM Teaching"
+        organization: "Queen Mary University of London (QMUL)"
+        role: "Demonstrator"
+        date: "2024"
+        location: "London, UK"
+        type: "Teaching & Mentorship"
+        highlight: true
+        content: "Demonstrated and guided undergraduate and foundation students in CHE209 (Python programming), BIO213 (planarian regeneration experiments), and SEF032 (β-galactosidase enzymology and DNA extraction)."
+        url: "https://www.qmul.ac.uk/sbbs/staff/yuyuanyang.html"
+
+      - title: "Open-Source Scientific Software Contributor"
+        organization: "MDAnalysis & ProLIF (Google Summer of Code)"
+        role: "Open Source Contributor"
+        date: "2025"
+        type: "Open Source Volunteering"
+        highlight: true
+        content: "Contributed implicit hydrogen bond detection and ligand-receptor interaction profiling tools to the open-source biophysical simulation community."
+        url: "/tags/gsoc"
+
+    attendanceOnly:
+      - title: "Biologics by Design Europe 2025"
+        event: "Chemical Computing Group (CCG)"
+        location: "Virtual"
+        date: "Jan 2025"
+        year: "2025"
+        type: "Attendance"
+        url: "https://www.chemcomp.com/en/Biologics-2025-Europe.htm"
+
+      - title: "28th MGMS Young Modellers’ Forum (YMF) 2024"
+        event: "Molecular Graphics and Modelling Society"
+        location: "Oxford, UK"
+        date: "Nov 2024"
+        year: "2024"
+        type: "Attendance"
+        url: "https://maps.app.goo.gl/P7UAhcHRCrFW1Lt58"
+
+      - title: "ELRIG Conference - Drug Discovery 2024"
+        event: "ELRIG"
+        location: "London, UK"
+        date: "Oct 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "NSTC x LTBS Cross-Disciplinary Conference 2024"
+        event: "National Science and Technology Council & LTBS"
+        location: "London, UK"
+        date: "Jul 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "UCL Information Studies Research Open Day"
+        event: "University College London"
+        location: "London, UK"
+        date: "Jun 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "2024 UK-QSAR Spring Meeting"
+        event: "UK-QSAR"
+        location: "Babraham, UK"
+        date: "Apr 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "AI UK 2024"
+        event: "The Alan Turing Institute"
+        location: "London, UK"
+        date: "Mar 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "BMCS Conformational Design in Drug Discovery 2024"
+        event: "RSC Biological and Medicinal Chemistry Sector"
+        location: "Stevenage, UK"
+        date: "Mar 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "QMUL SBBS PGR Symposium 2024"
+        event: "Queen Mary University of London"
+        location: "London, UK"
+        date: "Mar 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "Festival of Genomics and Biodata 2024"
+        event: "Front Line Genomics"
+        location: "London, UK"
+        date: "Jan 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "AIDD Winter School 2024"
+        event: "AI for Drug Discovery Doctoral Training Programme"
+        location: "London, UK"
+        date: "Jan 2024"
+        year: "2024"
+        type: "Attendance"
+
+      - title: "27th MGMS Young Modellers’ Forum (YMF) 2023"
+        event: "Molecular Graphics and Modelling Society"
+        location: "Oxford, UK"
+        date: "Nov 2023"
+        year: "2023"
+        type: "Attendance"
+
+      - title: "17th Interdisciplinary Biomedical Sciences Conference (iBS17)"
+        event: "London Biomedical Taiwanese Society (LTBS)"
+        location: "London, UK"
+        date: "Nov 2023"
+        year: "2023"
+        type: "Attendance"
+
+      - title: "AI at a Turning Point: How Can We Create Equitable AI Governance Futures?"
+        event: "Symposium on AI Ethics & Governance"
+        location: "London, UK"
+        date: "Nov 2023"
+        year: "2023"
+        type: "Attendance"
+
+    honors:
+      - title: "UKRI/BBSRC AIDD PhD Programme Scholarship"
+        organization: "UKRI & BBSRC"
+        program: "AI for Drug Discovery (AIDD) Doctoral Training Programme"
+        date: "Sep 2023 – Sep 2027"
+        year: "2023"
+        category: "grant"
+        categoryLabel: "Grants & Fellowships"
+        badge: "PhD Studentship"
+        location: "London, UK"
+        icon: "fas fa-graduation-cap"
+        content: "Competitive 4-year doctoral studentship funded by the UKRI and BBSRC for the AI for Drug Discovery (AIDD) programme at Queen Mary University of London."
+
+      - title: "NTU BEBI 2023 Best Master Thesis Award"
+        organization: "National Taiwan University"
+        program: "Graduate Institute of Biomedical Electronics and Bioinformatics (BEBI)"
+        date: "Sep 2023"
+        year: "2023"
+        category: "award"
+        categoryLabel: "Awards & Distinctions"
+        badge: "Best Thesis Award"
+        location: "Taipei, Taiwan"
+        icon: "fas fa-trophy"
+        content: "Awarded for outstanding master's thesis: 'FastEval Parkinsonism: an instant deep learning-based online self-evaluation system for the diagnosis of Parkinson's symptoms with hand videos using finger tapping'."
+        url: "https://doi.org/10.6342/NTU202300716"
+        urlText: "View Master's Thesis"
+
+      - title: "Enterprise Special Prize – Qiskit Hackathon Taiwan 2022"
+        organization: "NTU-IBM Quantum Hub & Qiskit"
+        program: "Quantum Algorithm Hackathon"
+        date: "Jul 2022"
+        year: "2022"
+        category: "competition"
+        categoryLabel: "Competitions & Hackathons"
+        badge: "Enterprise Special Prize"
+        location: "Taipei, Taiwan"
+        icon: "fas fa-award"
+        content: "Enterprise Special Prize awarded out of 12 competing teams (60 participants) in Taiwan's premier quantum algorithm and quantum computing hackathon."
+
+      - title: "DIGI+Talent Global Digital Awards (3rd Place Nationwide)"
+        organization: "Industrial Development Bureau, Ministry of Economic Affairs"
+        program: "DIGI+Talent Innovation Showcase"
+        date: "Dec 2020"
+        year: "2020"
+        category: "competition"
+        categoryLabel: "Competitions & Hackathons"
+        badge: "3rd Place (Nationwide)"
+        location: "Taipei, Taiwan"
+        icon: "fas fa-medal"
+        content: "Ranked 3rd place nationwide among 40 cross-institutional teams (360 participants) in the digital talent innovation showcase for AI-driven biomedical solutions."
+
+      - title: "Undergraduate Research Fellowship"
+        organization: "National Science and Technology Council (NSTC), Taiwan"
+        program: "College Student Research Project"
+        date: "Jul 2020 – Feb 2021"
+        year: "2020"
+        category: "grant"
+        categoryLabel: "Grants & Fellowships"
+        badge: "Research Fellowship"
+        location: "Taipei, Taiwan"
+        icon: "fas fa-flask"
+        content: "Competitive national research fellowship grant awarded by Taiwan's National Science and Technology Council to support independent undergraduate scientific research."
+
+      - title: "Presidential Award (Top 5% Academic Standing)"
+        organization: "National Taiwan University"
+        program: "Department of Chemical Engineering"
+        date: "Fall 2016, Fall 2017"
+        year: "2016"
+        category: "distinction"
+        categoryLabel: "Academic Distinctions"
+        badge: "Presidential Award"
+        location: "Taipei, Taiwan"
+        icon: "fas fa-star"
+        content: "Conferred to students ranked in the top 5% of the department for outstanding academic excellence across consecutive semesters."
   
   # Contact
   contact:
-    enable: true
+    enable: false
     # title: "Custom Name"
     content: For research questions, collaboration or anything else, email me.
     email: yu-yuan.yang@qmul.ac.uk
     btnName: Mail me
-    # formspree:
-    #   enable: true # `contact.email` value will be ignored
-    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
-    #   emailCaption: "Enter your email address"
-    #   messageCaption: "Enter your message here"
 
   footer:
     recentPosts:
       path: "blogs"
-      count: 3
-      title: Recent Posts
+      count: 4
+      title: "Recent News"
       enable: true
       disableFeaturedImage: false
     socialNetworks:
-      twitter: https://twitter.com/adp871111
-      instagram: https://www.instagram.com/yuy_qmul_diary?igsh=YnB0bWpvOHg3N2Vp&utm_source=qr
-      facebook: https://facebook.com/adp871111
+      github: https://github.com/yuyuan871111
+      linkedin: https://www.linkedin.com/in/yuyuan871111/
 
   # List pages like blogs and posts
   listPages:

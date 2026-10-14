@@ -1,0 +1,303 @@
+{{ if .Site.Params.projects.enable | default false }}
+<section id="projects" class="py-4 py-sm-5">
+    <span id="achievements"></span>
+    <div class="container">
+        <!-- Section Header -->
+        <h3 class="text-center mb-2">{{ .Site.Params.projects.title | default "Projects & Publications" }}</h3>
+        <p class="text-center text-muted mb-4 small">Project-centric research showcase with integrated publications, talks, and software</p>
+
+        <style>
+        #projects .card,
+        #projects .project-record-card {
+            min-height: auto !important;
+            height: auto !important;
+            background-color: var(--secondary-color) !important;
+            border: 1px solid rgba(125, 125, 125, 0.2) !important;
+            border-radius: 1rem !important;
+            overflow: hidden !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        #projects .card:hover,
+        #projects .project-record-card:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
+            border-color: var(--primary-color) !important;
+        }
+        #projects .project-record-card .badge {
+            margin: 0 !important;
+        }
+        .project-img-frame {
+            width: 100%;
+            height: 180px;
+            background: #ffffff;
+            border: 1px solid rgba(125, 125, 125, 0.18);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: 6px;
+        }
+        body.dark .project-img-frame {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        .project-card-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .nested-pub-box {
+            background: rgba(125, 125, 125, 0.05);
+            border-left: 3px solid var(--primary-color);
+        }
+        .nested-talk-box {
+            background: rgba(125, 125, 125, 0.05);
+            border-left: 3px solid #17a2b8;
+        }
+        @media (min-width: 768px) {
+            .border-end-md {
+                border-right: 1px solid rgba(125, 125, 125, 0.15);
+            }
+        }
+        </style>
+
+        <!-- Project Cards List -->
+        <div class="col-12 col-lg-11 col-xl-10 mx-auto">
+            {{ range .Site.Params.projects.items }}
+            {{ $tag := .projectTag }}
+
+            {{/* Find matched publications */}}
+            {{ $matchedPubs := slice }}
+            {{ if $tag }}
+                {{ range $.Site.Params.achievements.publications }}
+                    {{ if eq .projectTag $tag }}
+                        {{ $matchedPubs = $matchedPubs | append . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{/* Find matched oral presentations */}}
+            {{ $matchedOral := slice }}
+            {{ if $tag }}
+                {{ range $.Site.Params.achievements.oralPresentations }}
+                    {{ if eq .projectTag $tag }}
+                        {{ $matchedOral = $matchedOral | append . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{/* Find matched poster presentations */}}
+            {{ $matchedPosters := slice }}
+            {{ if $tag }}
+                {{ range $.Site.Params.achievements.posterPresentations }}
+                    {{ if eq .projectTag $tag }}
+                        {{ $matchedPosters = $matchedPosters | append . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            <div class="card project-record-card rounded-4 mb-4 overflow-hidden shadow-sm">
+                <div class="row g-0">
+                    <!-- Project Image & Badges Column -->
+                    <div class="col-lg-4 col-md-5 d-flex flex-column p-3 p-md-4 border-end-md" style="background: rgba(0,0,0,0.02);">
+                        <div>
+                            {{ if .image }}
+                            <div class="project-img-frame mb-3 rounded-3 overflow-hidden d-flex align-items-center justify-content-center">
+                                <img src="{{ .image }}" alt="{{ .title }}" class="project-card-img">
+                            </div>
+                            {{ end }}
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                {{ range .badges }}
+                                <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important; font-size: 0.73rem;">
+                                    {{ . }}
+                                </span>
+                                {{ end }}
+                                {{ if .projectTag }}
+                                <a href="/tags/{{ lower .projectTag }}" class="badge text-decoration-none border bg-transparent" style="color: var(--primary-color); border-color: var(--primary-color) !important; font-size: 0.73rem;">
+                                    #{{ .projectTag }}
+                                </a>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Details, Publications, and Talks Column -->
+                    <div class="col-lg-8 col-md-7 p-3 p-md-4 d-flex flex-column">
+                        <!-- Project Title -->
+                        <h4 class="fw-bold mb-2" style="font-size: 1.25rem; line-height: 1.35; color: var(--text-color);">
+                            {{ .title }}
+                        </h4>
+
+                        <!-- Project Description -->
+                        <div class="secondary-font mb-3 small" style="color: var(--text-secondary-color); line-height: 1.55;">
+                            {{ .content | markdownify }}
+                        </div>
+
+                        <!-- Integrated Publications -->
+                        {{ if gt (len $matchedPubs) 0 }}
+                        <div class="nested-pub-box p-2 p-md-3 rounded-2 mb-3">
+                            <div class="d-flex align-items-center gap-1 mb-1 fw-bold small" style="color: var(--primary-color);">
+                                <i class="fas fa-book-open"></i> Related publications:
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                {{ range $matchedPubs }}
+                                <div>
+                                    <div class="fw-semibold small mb-1" style="line-height: 1.35;">
+                                        {{ if .doiUrl }}
+                                        <a href="{{ .doiUrl }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="color: var(--text-color);">
+                                            {{ .title }} <i class="fas fa-external-link-alt ms-1" style="font-size: 0.7rem; color: var(--primary-color);"></i>
+                                        </a>
+                                        {{ else }}
+                                        <span style="color: var(--text-color);">{{ .title }}</span>
+                                        {{ end }}
+                                    </div>
+                                    <div class="small mb-1" style="color: var(--text-secondary-color); font-size: 0.78rem;">
+                                        {{ replace .authors "Yang, Y. Y." "<strong style='color: var(--text-color);'>Yang, Y. Y.</strong>" | safeHTML }}
+                                    </div>
+                                    <div class="d-flex flex-wrap align-items-center gap-2">
+                                        <span class="small fst-italic" style="color: var(--text-secondary-color); font-size: 0.8rem;">
+                                            {{ .venue }} ({{ .date }})
+                                        </span>
+                                        {{ if .doi }}
+                                        <a href="{{ .doiUrl }}" target="_blank" rel="noopener noreferrer" class="badge text-decoration-none border bg-transparent py-0 px-2" style="color: var(--primary-color); border-color: var(--primary-color) !important; font-size: 0.68rem;">
+                                            DOI: {{ .doi }}
+                                        </a>
+                                        {{ end }}
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+
+                        <!-- Integrated Presentations (Oral / Posters) -->
+                        {{ if or (gt (len $matchedOral) 0) (gt (len $matchedPosters) 0) }}
+                        <div class="nested-talk-box p-2 p-md-3 rounded-2 mb-3">
+                            <div class="d-flex align-items-center gap-1 mb-1 fw-bold small" style="color: #17a2b8;">
+                                <i class="fas fa-microphone-alt"></i> Presentations & Talks:
+                            </div>
+                            <div class="d-flex flex-column gap-1">
+                                {{ range first 2 $matchedOral }}
+                                <div class="small d-flex flex-wrap align-items-baseline gap-1" style="line-height: 1.4;">
+                                    <span class="badge bg-transparent border py-0 px-1" style="color: #17a2b8; border-color: #17a2b8 !important; font-size: 0.68rem;">Oral</span>
+                                    <span class="fw-semibold" style="color: var(--text-color); font-size: 0.82rem;">{{ .event }}</span>
+                                    <span class="text-muted" style="font-size: 0.78rem;">({{ .date }}{{ if .location }} &bull; {{ .location }}{{ end }})</span>
+                                </div>
+                                {{ end }}
+                                {{ range first 2 $matchedPosters }}
+                                <div class="small d-flex flex-wrap align-items-baseline gap-1" style="line-height: 1.4;">
+                                    <span class="badge bg-transparent border py-0 px-1" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important; font-size: 0.68rem;">Poster</span>
+                                    <span class="fw-semibold" style="color: var(--text-color); font-size: 0.82rem;">{{ .event }}</span>
+                                    <span class="text-muted" style="font-size: 0.78rem;">({{ .date }}{{ if .location }} &bull; {{ .location }}{{ end }})</span>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+
+                        <!-- Action Links Footer -->
+                        <div class="d-flex flex-wrap align-items-center gap-2 mt-auto pt-2 border-top">
+                            {{ range .links }}
+                            <a href="{{ .url }}" target="{{ if hasPrefix .url "http" }}_blank{{ else }}_self{{ end }}" class="btn btn-sm btn-outline-secondary py-1 px-3 d-inline-flex align-items-center gap-1">
+                                <i class="{{ .icon }}"></i>
+                                <span>
+                                    {{ if eq .icon "fab fa-github" }}Code / GitHub
+                                    {{ else if eq .icon "fa-solid fa-blog" }}Project Article
+                                    {{ else if eq .icon "fa fa-blog" }}Project Article
+                                    {{ else }}Details
+                                    {{ end }}
+                                </span>
+                            </a>
+                            {{ end }}
+                            {{ if .featured }}
+                            <a href="{{ .featured.link }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary py-1 px-3 d-inline-flex align-items-center gap-1 ms-md-auto">
+                                <i class="fas fa-globe"></i> {{ .featured.name }}
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+
+            <!-- Collaborative Research & Service Block -->
+            <div class="card project-record-card rounded-4 p-3 p-md-4 mb-4 shadow-sm">
+                <div class="row g-4">
+                    <!-- Collaborative Research & Preprints -->
+                    <div class="col-12 col-md-6 border-end-md">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="fas fa-users text-primary"></i>
+                            <h5 class="fw-bold mb-0" style="font-size: 1.05rem; color: var(--text-color);">Collaborative Research & Preprints</h5>
+                        </div>
+                        <div class="d-flex flex-column gap-3">
+                            <!-- bioRxiv paper -->
+                            <div class="p-3 rounded-3" style="background: rgba(125, 125, 125, 0.05); border-left: 3px solid var(--primary-color);">
+                                <span class="badge border bg-transparent mb-1" style="color: var(--primary-color); border-color: var(--primary-color) !important; font-size: 0.68rem;">Preprint &bull; 2026</span>
+                                <h6 class="fw-bold mb-1" style="font-size: 0.95rem; line-height: 1.35;">
+                                    <a href="https://doi.org/10.64898/2026.05.07.723501" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="color: var(--text-color);">
+                                        Architecture of the type II secretion system <i class="fas fa-external-link-alt ms-1" style="font-size: 0.65rem; color: var(--primary-color);"></i>
+                                    </a>
+                                </h6>
+                                <div class="small mb-1" style="color: var(--text-secondary-color); font-size: 0.78rem;">
+                                    Tayebinia, M., Ghanem, N., Zhang, H., <strong style="color: var(--text-color);">Yang, Y. Y.</strong>, Fornili, A., Shevchik, V., Darbari, V., Pickersgill, R.
+                                </div>
+                                <div class="small fst-italic text-muted" style="font-size: 0.78rem;">
+                                    bioRxiv &bull; Cryo-EM & Structural Biology
+                                </div>
+                            </div>
+
+                            <!-- IEEE Quantum paper -->
+                            <div class="p-3 rounded-3" style="background: rgba(125, 125, 125, 0.05); border-left: 3px solid var(--primary-color);">
+                                <span class="badge border bg-transparent mb-1" style="color: var(--primary-color); border-color: var(--primary-color) !important; font-size: 0.68rem;">Review &bull; 2023</span>
+                                <h6 class="fw-bold mb-1" style="font-size: 0.95rem; line-height: 1.35;">
+                                    <a href="https://doi.org/10.1109/MNANO.2023.3249499" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="color: var(--text-color);">
+                                        Recent advances in quantum computing for drug discovery and development <i class="fas fa-external-link-alt ms-1" style="font-size: 0.65rem; color: var(--primary-color);"></i>
+                                    </a>
+                                </h6>
+                                <div class="small mb-1" style="color: var(--text-secondary-color); font-size: 0.78rem;">
+                                    Wang, P. H., Chen J. H., <strong style="color: var(--text-color);">Yang, Y. Y.</strong>, Lee, C., Tseng, Y. J.
+                                </div>
+                                <div class="small fst-italic text-muted" style="font-size: 0.78rem;">
+                                    IEEE Nanotechnology Magazine &bull; Quantum CADD
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Service & Outreach -->
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="fas fa-hands-helping text-success"></i>
+                            <h5 class="fw-bold mb-0" style="font-size: 1.05rem; color: var(--text-color);">Service, Mentorship & Outreach</h5>
+                        </div>
+                        <div class="d-flex flex-column gap-3">
+                            {{ range .Site.Params.achievements.service }}
+                            <div class="p-3 rounded-3" style="background: rgba(125, 125, 125, 0.05); border-left: 3px solid #198754;">
+                                <div class="d-flex justify-content-between align-items-center gap-1 mb-1">
+                                    <span class="badge border bg-transparent" style="color: #198754; border-color: #198754 !important; font-size: 0.68rem;">{{ .role }}</span>
+                                    <span class="badge border bg-transparent" style="color: var(--text-secondary-color); border-color: var(--text-secondary-color) !important; font-size: 0.68rem;">{{ .date }}</span>
+                                </div>
+                                <h6 class="fw-bold mb-1" style="font-size: 0.95rem; color: var(--text-color);">{{ .title }}</h6>
+                                <div class="small fw-semibold mb-1" style="color: var(--primary-color); font-size: 0.78rem;">{{ .organization }}</div>
+                                <div class="small text-muted" style="font-size: 0.78rem; line-height: 1.4;">{{ .content }}</div>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Action Links -->
+            <div class="text-center mt-4 pt-2">
+                <a href="{{ .Site.Params.achievements.fullListUrl | default "/blogs/publication" }}" class="btn btn-outline-primary px-4 py-2 me-2">
+                    <i class="fas fa-search me-1"></i> Search Full Publications & Conferences List
+                </a>
+                <a href="/blogs/honors" class="btn btn-outline-secondary px-4 py-2">
+                    <i class="fas fa-award me-1"></i> Honors & Awards
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,78 @@
+{{ $recentPostsPath := .Site.Params.footer.recentPosts.path | default "blogs" }}
+{{ $allPosts := where .Site.RegularPages "Section" $recentPostsPath }}
+
+{{/* Exclude publication index and honors if present */}}
+{{ $newsPosts := slice }}
+{{ range $allPosts }}
+    {{ if and (ne .Params.layout "publications") (ne .Params.layout "honors") (ne .File.BaseFileName "publication") (ne .File.BaseFileName "honors") }}
+        {{ $newsPosts = $newsPosts | append . }}
+    {{ end }}
+{{ end }}
+
+{{ $currentNumOfrecentPosts := len $newsPosts }} 
+{{ if and (gt $currentNumOfrecentPosts 0) (.Site.Params.footer.recentPosts.enable | default false) }} 
+<div class="container py-4 my-0" id="recent-posts">
+    <div class="col-12 col-lg-9 col-xl-8 mx-auto">
+        <!-- News Header -->
+        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+            <h4 class="fw-bold mb-0 d-flex align-items-center gap-2" style="color: var(--text-color); font-size: 1.2rem;">
+                <i class="fas fa-bullhorn text-primary"></i>
+                <span>{{ .Site.Params.footer.recentPosts.title | default "Recent News" }}</span>
+            </h4>
+            <a href="/blogs" class="text-decoration-none small fw-semibold" style="color: var(--primary-color);">
+                All News & Articles <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        {{ $recentPostsCount := .Site.Params.footer.recentPosts.count | default 4 }}
+        {{ $recentPosts := first $recentPostsCount $newsPosts }}
+
+        <style>
+        footer {
+            background-color: var(--background-color) !important;
+            margin-top: 0 !important;
+            border-top: none !important;
+        }
+        #recent-posts {
+            margin-top: 0 !important;
+        }
+        .news-item-row {
+            background-color: var(--secondary-color);
+            border: 1px solid rgba(125, 125, 125, 0.2);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+        }
+        .news-item-row:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06) !important;
+            border-color: var(--primary-color) !important;
+        }
+        </style>
+
+        <!-- News Items List -->
+        <div class="d-flex flex-column gap-2">
+            {{ range $recentPosts }}
+            <a href="{{ .RelPermalink }}" class="text-decoration-none p-3 rounded-3 news-item-row d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+                <div class="d-flex align-items-baseline gap-2 flex-grow-1">
+                    <span class="badge border bg-transparent text-secondary flex-shrink-0" style="font-size: 0.73rem; min-width: 82px;">
+                        {{ .Date.Format "Jan 2006" }}
+                    </span>
+                    <span class="fw-semibold" style="color: var(--text-color); font-size: 0.95rem; line-height: 1.4;">
+                        {{ .Title }}
+                    </span>
+                </div>
+                <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-sm-2">
+                    {{ with index .Params.tags 0 }}
+                    <span class="badge border bg-transparent" style="color: var(--primary-color); border-color: var(--primary-color) !important; font-size: 0.68rem;">
+                        #{{ . }}
+                    </span>
+                    {{ end }}
+                    <span class="small text-muted d-none d-sm-inline">
+                        <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    </span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
