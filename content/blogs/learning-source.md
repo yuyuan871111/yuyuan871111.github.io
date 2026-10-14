@@ -10,7 +10,7 @@ tags:
   - toolbox
   - developer software
 image: /images/blog_pics/python_screen.png
-description: "The learning resource to become an advanaced programming writer."
+description: "Resources I used to become a better Python programmer."
 toc: 
 ---
 

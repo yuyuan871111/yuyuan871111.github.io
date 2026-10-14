@@ -9,7 +9,7 @@ tags:
   - achievement
   - AI generated pictures
 image: /images/blog_pics/achievement.png
-description: "publication list and conference attendence"
+description: "Honors, Grants, Fellowships and Awards"
 toc: 
 ---
 

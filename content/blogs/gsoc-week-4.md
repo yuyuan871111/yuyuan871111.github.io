@@ -70,7 +70,7 @@ Here, we accept two types of templates for fixing bond orders: **CIF template** 
 
 
 ### CIF template
-The idea using CIF template is come from [PDBInf](https://github.com/OpenFreeEnergy/pdbinf). PDBInf allows you to read PDB files using RDKit and assign bond orders from .cif (PDBx) template files. It is noted that PDBx/mmCIF format is a next-generation file format for storing the informaiton of protein/biomolecule structure. A CIF template of a ligand can be found on [RCSB PDB website](https://www.rcsb.org/). For example: [Benzamidine](https://www.rcsb.org/ligand/BEN). 
+The idea of using CIF templates comes from [PDBInf](https://github.com/OpenFreeEnergy/pdbinf). PDBInf allows you to read PDB files using RDKit and assign bond orders from .cif (PDBx) template files. It is noted that PDBx/mmCIF format is a next-generation file format for storing the information of protein/biomolecule structure. A CIF template of a ligand can be found on [RCSB PDB website](https://www.rcsb.org/). For example: [Benzamidine](https://www.rcsb.org/ligand/BEN). 
 
 ![RCSB Benzamidine](/images/blog_pics/gsoc-wk-4-003.png)
 

@@ -1,5 +1,5 @@
 ---
-title: "Safety Alternative Substitues in Chemistry"
+title: "Safer Alternative Substitutes in Chemistry"
 date: 2024-08-16T15:18:11Z
 draft: False
 # github_link: "https://github.com/gurusabarish/hugo-profile"

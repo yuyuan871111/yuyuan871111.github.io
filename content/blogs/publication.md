@@ -37,7 +37,7 @@ This is a summary list for my publication and conference, which is updated manua
 
 ## Conferences/Events
 (also including **PhD student day**, **Symposium**, **Forum**, **Winter school** and **Summer school**)
-### Attendence with presentation
+### Attendance with presentation
 #### 2025
  
 13\. [<r>poster</r>, [DLPROBSEG](/tags/dlprobseg)] **Yang, Y. Y.**, Pickersgill, R. W., Fornili, A. "Holo-like conformation selection using a computer vision-based deep-learning model." QMUL, School of Biological and Behavioural Sciences Postgraduate Researche Symposium 2025 ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 26-27 Jun.)  
@@ -58,19 +58,19 @@ This is a summary list for my publication and conference, which is updated manua
 1\. [<bb>oral</bb>, [COVIDVARI](/tags/covidvari)] **Yang, Y. Y.** and Tseng, Y. J. “Competitive analysis of different SARS-CoV-2 variants in United Kingdom, Israel, South Africa, Brazil and Peru.” American Chemical Society (ACS) Spring 2022. ([virtual](https://www.morressier.com/o/event/623377e0b300ee00119b311f/article/6234a182818a915252b7f606), 20–24 Mar.)   
 
 
-### Attendence (as an organizer)
+### Attendance (as an organizer)
 #### 2024 
-1\. 18th Interdiscipline Biomedical Sciences conference (iBS18) hosted by London Biomedical Taiwanes Society (LTBS) ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 7 Dec.)   
+1\. 18th Interdiscipline Biomedical Sciences conference (iBS18) hosted by London Biomedical Taiwanese Society (LTBS) ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 7 Dec.)   
 
 
-### Attendence only
+### Attendance only
 #### 2025
 14\. Biologics by Design Europe 2025 ([virtual](https://www.chemcomp.com/en/Biologics-2025-Europe.htm) at [CCG](https://www.chemcomp.com/en/index.htm), 29 Jan.)   
 #### 2024
 13\. 28th MGMS Young Modellers’ Forum (YMF) 2024 ([Oxford, UK](https://maps.app.goo.gl/P7UAhcHRCrFW1Lt58), 29 Nov.)    
 12\. ELRIG Conference - Drug Discovery 2024 ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 2-3 Oct.)  
 11\. NSTC x LTBS Cross-Disciplinary Conference 2024 ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 13 Jul.)   
-10\. UCL information studies reserach open day ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 3 Jun.)  
+10\. UCL information studies research open day ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 3 Jun.)  
 9\. 2024 UK-QSAR Spring Meeting ([Babraham, UK](https://maps.app.goo.gl/5HJDriRmLYFJLcDw9), 11 Apr.)  
 8\. AI UK 2024 ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 19-20 Mar.)  
 7\. BMCS Conformational Design in Drug Discovery 2024 ([Stevenage, UK](https://maps.app.goo.gl/pzgqV9jYTXWsFNHz6), 07 Mar.)  
@@ -79,5 +79,5 @@ This is a summary list for my publication and conference, which is updated manua
 4\. AIDD winter school 2024 ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 16-17 Jan.)  
 #### 2023
 3\. 27th MGMS Young Modellers’ Forum (YMF) 2023 ([Oxford, UK](https://maps.app.goo.gl/P7UAhcHRCrFW1Lt58), 24 Nov.)    
-2\. 17th Interdiscipline Biomedical Sciences conference (iBS17) hosted by London Biomedical Taiwanes Society (LTBS) ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 18 Nov.)   
+2\. 17th Interdiscipline Biomedical Sciences conference (iBS17) hosted by London Biomedical Taiwanese Society (LTBS) ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 18 Nov.)   
 1\. AI at a Turning Point: How Can We Create Equitable AI Governance Futures? ([London, UK](https://maps.app.goo.gl/NSX5xR2NKRRwiqcp6), 02 Nov.)  
